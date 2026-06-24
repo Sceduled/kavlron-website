@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Image from "next/image";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -31,36 +32,36 @@ export default function Navbar() {
         <a
           href="#"
           id="nav-logo"
-          className="flex items-center gap-2 group"
+          className="flex items-center group"
           aria-label="Kalvron home"
         >
-          {/* Logo mark */}
-          <div className="relative w-7 h-7 flex items-center justify-center">
-            <div className="absolute inset-0 rounded-md bg-[#7C3AED] opacity-20 group-hover:opacity-40 transition-opacity duration-300" />
-            <svg
-              viewBox="0 0 24 24"
-              fill="none"
-              className="w-4 h-4 relative z-10"
-              aria-hidden="true"
-            >
-              <path
-                d="M4 4L12 2L20 4V12C20 17 12 22 12 22C12 22 4 17 4 12V4Z"
-                stroke="#7C3AED"
-                strokeWidth="1.5"
-                strokeLinejoin="round"
-              />
-              <path
-                d="M9 12L11 14L15 10"
-                stroke="#9461FF"
-                strokeWidth="1.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
-          </div>
-          <span className="text-white font-semibold text-lg tracking-tight">
-            Kalvron
-          </span>
+          {/* Full wordmark on md+ screens */}
+          <Image
+            src="/logo-full.png"
+            alt="Kalvron"
+            width={140}
+            height={32}
+            className="hidden md:block h-7 w-auto"
+            style={{
+              /* mix-blend-mode: screen makes the grey bg transparent on dark surface */
+              mixBlendMode: "screen",
+              filter: "brightness(10)",
+            }}
+            priority
+          />
+          {/* K icon mark on mobile */}
+          <Image
+            src="/logo-k.png"
+            alt="Kalvron"
+            width={40}
+            height={40}
+            className="block md:hidden h-8 w-auto"
+            style={{
+              mixBlendMode: "screen",
+              filter: "brightness(10)",
+            }}
+            priority
+          />
         </a>
 
         {/* Desktop links */}

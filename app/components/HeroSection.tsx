@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import Terminal from "./Terminal";
 
 export default function HeroSection() {
@@ -36,6 +37,24 @@ export default function HeroSection() {
 
       {/* Content */}
       <div className="relative z-10 flex flex-col items-center text-center max-w-4xl mx-auto">
+
+        {/* K logo mark — anchors brand before headline */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.5, delay: 0.1, ease: "easeOut" }}
+          className="mb-6 will-change-transform"
+        >
+          <Image
+            src="/logo-k.png"
+            alt="Kalvron"
+            width={48}
+            height={48}
+            className="h-12 w-auto"
+            style={{ mixBlendMode: "screen", filter: "brightness(10)" }}
+            priority
+          />
+        </motion.div>
 
         {/* Small tag */}
         <motion.div

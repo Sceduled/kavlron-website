@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, JetBrains_Mono } from "next/font/google";
 import SmoothScrollProvider from "./components/SmoothScrollProvider";
+import BrandIntro from "./components/BrandIntro";
 import "./globals.css";
 
 const inter = Inter({
@@ -26,6 +27,11 @@ export const metadata: Metadata = {
     "WhatsApp lead qualification",
     "sales pipeline automation",
   ],
+  icons: {
+    icon: "/logo-k.png",
+    shortcut: "/logo-k.png",
+    apple: "/logo-k.png",
+  },
   openGraph: {
     title: "Kalvron AI — Revenue Recovery Infrastructure",
     description:
@@ -46,6 +52,7 @@ export default function RootLayout({
     >
       <body className="min-h-full bg-[#0A0A0F] text-white antialiased">
         <SmoothScrollProvider>
+          <BrandIntro />
           {children}
         </SmoothScrollProvider>
       </body>
