@@ -5,7 +5,10 @@ import HowItWorksSection from "./components/HowItWorksSection";
 import ClientViewSection from "./components/ClientViewSection";
 import BuiltForSection from "./components/BuiltForSection";
 import OperationalDeltaSection from "./components/OperationalDeltaSection";
+import InfrastructureSection from "./components/InfrastructureSection";
+import TrustSection from "./components/TrustSection";
 import PartnerSection from "./components/PartnerSection";
+import FaqSection from "./components/FaqSection";
 
 export default function Home() {
   return (
@@ -16,15 +19,15 @@ export default function Home() {
       <Navbar />
       <HeroSection />
 
-      {/* ── Placeholder sections (Phase 2+) ─────────────────────── */}
-      <HowItWorksSection />
-
       <ProblemSection />
-
+      <HowItWorksSection />
       <ClientViewSection />
       <BuiltForSection />
       <OperationalDeltaSection />
+      <InfrastructureSection />
+      <TrustSection />
       <PartnerSection />
+      <FaqSection />
     </main>
   );
 }
