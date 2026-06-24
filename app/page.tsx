@@ -3,6 +3,8 @@ import HeroSection from "./components/HeroSection";
 import ProblemSection from "./components/ProblemSection";
 import HowItWorksSection from "./components/HowItWorksSection";
 import ClientViewSection from "./components/ClientViewSection";
+import BuiltForSection from "./components/BuiltForSection";
+import OperationalDeltaSection from "./components/OperationalDeltaSection";
 import PartnerSection from "./components/PartnerSection";
 
 export default function Home() {
@@ -20,6 +22,8 @@ export default function Home() {
       <ProblemSection />
 
       <ClientViewSection />
+      <BuiltForSection />
+      <OperationalDeltaSection />
       <PartnerSection />
     </main>
   );
