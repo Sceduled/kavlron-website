@@ -43,9 +43,8 @@ export default function Navbar() {
             height={32}
             className="hidden md:block h-7 w-auto"
             style={{
-              /* mix-blend-mode: screen makes the grey bg transparent on dark surface */
-              mixBlendMode: "screen",
-              filter: "brightness(10)",
+              /* invert(1) makes bg dark, hue-rotate(180deg) keeps the blue accent */
+              filter: "invert(1) hue-rotate(180deg)",
             }}
             priority
           />
@@ -57,8 +56,7 @@ export default function Navbar() {
             height={40}
             className="block md:hidden h-8 w-auto"
             style={{
-              mixBlendMode: "screen",
-              filter: "brightness(10)",
+              filter: "invert(1) hue-rotate(180deg)",
             }}
             priority
           />

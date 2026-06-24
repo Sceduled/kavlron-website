@@ -40,8 +40,7 @@ export default function BrandIntro() {
           height={80}
           className="h-20 w-auto"
           style={{
-            mixBlendMode: "screen",
-            filter: "brightness(10)",
+            filter: "invert(1) hue-rotate(180deg)",
           }}
           priority
         />

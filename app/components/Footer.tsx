@@ -14,8 +14,7 @@ export default function Footer() {
             height={24}
             className="h-6 w-auto"
             style={{
-              mixBlendMode: "screen",
-              filter: "brightness(10)",
+              filter: "invert(1) hue-rotate(180deg)",
             }}
           />
         </div>

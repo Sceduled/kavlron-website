@@ -51,7 +51,7 @@ export default function HeroSection() {
             width={48}
             height={48}
             className="h-12 w-auto"
-            style={{ mixBlendMode: "screen", filter: "brightness(10)" }}
+            style={{ filter: "invert(1) hue-rotate(180deg)" }}
             priority
           />
         </motion.div>
