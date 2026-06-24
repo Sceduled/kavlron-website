@@ -1,20 +1,42 @@
+"use client";
+
 import React from "react";
+import { motion, Variants } from "framer-motion";
 
 export default function BuiltForSection() {
+  const cardVariants: Variants = {
+    hidden: { opacity: 0, y: 40 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+  };
+
   return (
     <section id="built-for" className="relative py-24 border-t border-[#1E1E2E] bg-[#0A0A0F]">
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
         
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white tracking-tight">
-            Built for businesses that run on leads.
-          </h2>
+          <div className="overflow-hidden pb-2">
+            <motion.h2 
+              initial={{ y: "100%" }}
+              whileInView={{ y: 0 }}
+              viewport={{ once: true, amount: 0.5 }}
+              transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+              className="text-3xl md:text-4xl lg:text-5xl font-bold text-white tracking-tight will-change-transform"
+            >
+              Built for businesses that run on leads.
+            </motion.h2>
+          </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <motion.div 
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ staggerChildren: 0.15 }}
+          className="grid grid-cols-1 md:grid-cols-3 gap-6"
+        >
           
           {/* Card 1: Education */}
-          <div className="bg-[#111118] border border-[#1E1E2E] rounded-2xl p-8 hover:border-[#7C3AED]/30 transition-colors">
+          <motion.div variants={cardVariants} className="bg-[#111118] border border-[#1E1E2E] rounded-2xl p-8 hover:border-[#7C3AED]/30 transition-colors will-change-transform">
             <div className="w-12 h-12 rounded-xl bg-[#7C3AED]/10 flex items-center justify-center mb-6">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6 text-[#7C3AED]">
                 <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
@@ -25,10 +47,10 @@ export default function BuiltForSection() {
             <p className="text-[#9CA3AF] text-sm leading-relaxed">
               Colleges, schools, coaching institutes. Admission leads qualified automatically. Counselors only call students who are ready to enroll.
             </p>
-          </div>
+          </motion.div>
 
           {/* Card 2: Real Estate */}
-          <div className="bg-[#111118] border border-[#1E1E2E] rounded-2xl p-8 hover:border-[#7C3AED]/30 transition-colors">
+          <motion.div variants={cardVariants} className="bg-[#111118] border border-[#1E1E2E] rounded-2xl p-8 hover:border-[#7C3AED]/30 transition-colors will-change-transform">
             <div className="w-12 h-12 rounded-xl bg-[#7C3AED]/10 flex items-center justify-center mb-6">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6 text-[#7C3AED]">
                 <path d="M3 21h18" />
@@ -45,10 +67,10 @@ export default function BuiltForSection() {
             <p className="text-[#9CA3AF] text-sm leading-relaxed">
               Builders, developers, sales teams. Buyer leads qualified for budget, timeline, location, and intent. Agents only talk to serious buyers.
             </p>
-          </div>
+          </motion.div>
 
           {/* Card 3: Any Lead-Gen Business */}
-          <div className="bg-[#111118] border border-[#1E1E2E] rounded-2xl p-8 hover:border-[#7C3AED]/30 transition-colors">
+          <motion.div variants={cardVariants} className="bg-[#111118] border border-[#1E1E2E] rounded-2xl p-8 hover:border-[#7C3AED]/30 transition-colors will-change-transform">
             <div className="w-12 h-12 rounded-xl bg-[#7C3AED]/10 flex items-center justify-center mb-6">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6 text-[#7C3AED]">
                 <rect x="2" y="7" width="20" height="14" rx="2" ry="2" />
@@ -59,9 +81,9 @@ export default function BuiltForSection() {
             <p className="text-[#9CA3AF] text-sm leading-relaxed">
               Healthcare, home services, D2C, professional services. If your client runs ads and has a sales team that calls leads, this system works.
             </p>
-          </div>
+          </motion.div>
 
-        </div>
+        </motion.div>
       </div>
     </section>
   );

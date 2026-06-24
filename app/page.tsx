@@ -11,7 +11,6 @@ import PartnerSection from "./components/PartnerSection";
 import FaqSection from "./components/FaqSection";
 import CtaSection from "./components/CtaSection";
 import Footer from "./components/Footer";
-import FadeIn from "./components/FadeIn";
 
 export default function Home() {
   return (
@@ -21,17 +20,17 @@ export default function Home() {
 
       <Navbar />
       
-      <FadeIn><HeroSection /></FadeIn>
-      <FadeIn><ProblemSection /></FadeIn>
-      <FadeIn><HowItWorksSection /></FadeIn>
-      <FadeIn><ClientViewSection /></FadeIn>
-      <FadeIn><BuiltForSection /></FadeIn>
-      <FadeIn><OperationalDeltaSection /></FadeIn>
-      <FadeIn><InfrastructureSection /></FadeIn>
-      <FadeIn><TrustSection /></FadeIn>
-      <FadeIn><PartnerSection /></FadeIn>
-      <FadeIn><FaqSection /></FadeIn>
-      <FadeIn><CtaSection /></FadeIn>
+      <HeroSection />
+      <ProblemSection />
+      <HowItWorksSection />
+      <ClientViewSection />
+      <BuiltForSection />
+      <OperationalDeltaSection />
+      <InfrastructureSection />
+      <TrustSection />
+      <PartnerSection />
+      <FaqSection />
+      <CtaSection />
       
       <Footer />
     </main>

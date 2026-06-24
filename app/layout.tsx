@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, JetBrains_Mono } from "next/font/google";
+import SmoothScrollProvider from "./components/SmoothScrollProvider";
 import "./globals.css";
 
 const inter = Inter({
@@ -44,7 +45,9 @@ export default function RootLayout({
       className={`${inter.variable} ${jetbrainsMono.variable} h-full`}
     >
       <body className="min-h-full bg-[#0A0A0F] text-white antialiased">
-        {children}
+        <SmoothScrollProvider>
+          {children}
+        </SmoothScrollProvider>
       </body>
     </html>
   );

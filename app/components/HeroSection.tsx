@@ -1,5 +1,6 @@
 "use client";
 
+import { motion } from "framer-motion";
 import Terminal from "./Terminal";
 
 export default function HeroSection() {
@@ -37,9 +38,12 @@ export default function HeroSection() {
       <div className="relative z-10 flex flex-col items-center text-center max-w-4xl mx-auto">
 
         {/* Small tag */}
-        <div
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
           id="hero-tag"
-          className="inline-flex items-center gap-2 mb-8 px-3 py-1.5 rounded-full text-xs font-mono uppercase tracking-widest"
+          className="inline-flex items-center gap-2 mb-8 px-3 py-1.5 rounded-full text-xs font-mono uppercase tracking-widest will-change-transform"
           style={{
             background: "rgba(124,58,237,0.1)",
             border: "1px solid rgba(124,58,237,0.25)",
@@ -51,41 +55,82 @@ export default function HeroSection() {
             aria-hidden="true"
           />
           Revenue Recovery Infrastructure
-        </div>
+        </motion.div>
 
         {/* Headline */}
         <h1
           id="hero-headline"
           className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold leading-[1.1] tracking-tight mb-6"
         >
-          <span className="block text-white">Your clients blame you</span>
-          <span className="block text-white">for bad leads.</span>
-          <span className="block mt-2 text-white">
-            The leads were{" "}
-            <span
-              className="relative inline-block"
-              style={{ color: "#E53E3E" }}
+          {/* Line 1 */}
+          <div className="overflow-hidden">
+            <motion.span 
+              className="block text-white will-change-transform"
+              initial={{ y: "100%" }}
+              animate={{ y: 0 }}
+              transition={{ duration: 0.8, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
             >
-              fine.
-              {/* Red underline glow */}
+              Your clients blame you
+            </motion.span>
+          </div>
+          {/* Line 2 */}
+          <div className="overflow-hidden">
+            <motion.span 
+              className="block text-white will-change-transform"
+              initial={{ y: "100%" }}
+              animate={{ y: 0 }}
+              transition={{ duration: 0.8, delay: 0.55, ease: [0.16, 1, 0.3, 1] }}
+            >
+              for bad leads.
+            </motion.span>
+          </div>
+          {/* Line 3 */}
+          <div className="overflow-hidden mt-2 pb-2">
+            <motion.span 
+              className="block text-white will-change-transform"
+              initial={{ y: "100%" }}
+              animate={{ y: 0 }}
+              transition={{ duration: 0.8, delay: 0.7, ease: [0.16, 1, 0.3, 1] }}
+            >
+              The leads were{" "}
               <span
-                className="absolute -bottom-1 left-0 right-0 h-px"
-                style={{
-                  background: "linear-gradient(90deg, transparent, #E53E3E, transparent)",
-                  boxShadow: "0 0 8px rgba(229,62,62,0.6)",
-                }}
-                aria-hidden="true"
-              />
-            </span>
-            <span className="text-white">
-              {" "}Their team didn&apos;t
-            </span>
-          </span>
-          <span className="block text-white">follow up.</span>
+                className="relative inline-block"
+                style={{ color: "#E53E3E" }}
+              >
+                fine.
+                {/* Red underline glow */}
+                <span
+                  className="absolute -bottom-1 left-0 right-0 h-px"
+                  style={{
+                    background: "linear-gradient(90deg, transparent, #E53E3E, transparent)",
+                    boxShadow: "0 0 8px rgba(229,62,62,0.6)",
+                  }}
+                  aria-hidden="true"
+                />
+              </span>
+              <span className="text-white">
+                {" "}Their team didn&apos;t
+              </span>
+            </motion.span>
+          </div>
+          {/* Line 4 */}
+          <div className="overflow-hidden">
+            <motion.span 
+              className="block text-white will-change-transform"
+              initial={{ y: "100%" }}
+              animate={{ y: 0 }}
+              transition={{ duration: 0.8, delay: 0.75, ease: [0.16, 1, 0.3, 1] }}
+            >
+              follow up.
+            </motion.span>
+          </div>
         </h1>
 
         {/* Subtext */}
-        <p
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.8, delay: 0.9 }}
           id="hero-subtext"
           className="text-base sm:text-lg leading-relaxed max-w-[580px] mx-auto mb-10"
           style={{ color: "#9CA3AF" }}
@@ -95,12 +140,15 @@ export default function HeroSection() {
           <span className="text-white font-medium">60 seconds</span>. Qualified
           automatically. Only the serious ones reach the team. Your campaign stops
           getting blamed.
-        </p>
+        </motion.p>
 
         {/* CTA buttons */}
-        <div
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 1.1 }}
           id="hero-ctas"
-          className="flex flex-col sm:flex-row items-center gap-4"
+          className="flex flex-col sm:flex-row items-center gap-4 will-change-transform"
         >
           <a
             href="#how-it-works"
@@ -159,16 +207,31 @@ export default function HeroSection() {
           >
             Partner With Us
           </a>
-        </div>
+        </motion.div>
 
         {/* Terminal */}
-        <Terminal />
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: [0, -3, 0] }}
+          transition={{ 
+            opacity: { duration: 0.8, delay: 1.3 },
+            y: { repeat: Infinity, duration: 4, ease: "easeInOut", delay: 1.3 } 
+          }}
+          className="will-change-transform mt-4"
+        >
+          <Terminal />
+        </motion.div>
 
         {/* Scroll indicator */}
-        <div className="mt-16 flex flex-col items-center gap-2 opacity-40">
+        <motion.div 
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 0.4 }}
+          transition={{ duration: 1, delay: 2 }}
+          className="mt-16 flex flex-col items-center gap-2"
+        >
           <span className="text-xs font-mono text-[#9CA3AF] tracking-widest uppercase">Scroll</span>
           <div className="w-px h-8 bg-gradient-to-b from-[#9CA3AF] to-transparent animate-pulse" />
-        </div>
+        </motion.div>
       </div>
     </section>
   );

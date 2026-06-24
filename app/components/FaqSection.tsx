@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import { motion, Variants } from "framer-motion";
 
 export default function FaqSection() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
@@ -36,21 +37,44 @@ export default function FaqSection() {
     }
   ];
 
+  const containerVariants: Variants = {
+    hidden: {},
+    visible: { transition: { staggerChildren: 0.1 } },
+  };
+
+  const itemVariants: Variants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
+  };
+
   return (
     <section id="faq" className="relative py-24 border-t border-[#1E1E2E] bg-[#0A0A0F]">
       <div className="max-w-3xl mx-auto px-6 lg:px-10">
         
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white tracking-tight">
+        <div className="text-center mb-16 overflow-hidden">
+          <motion.h2 
+            initial={{ y: "100%" }}
+            whileInView={{ y: 0 }}
+            viewport={{ once: true, amount: 0.5 }}
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+            className="text-3xl md:text-4xl lg:text-5xl font-bold text-white tracking-tight will-change-transform"
+          >
             Frequently asked questions.
-          </h2>
+          </motion.h2>
         </div>
 
-        <div className="flex flex-col gap-4">
+        <motion.div 
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.1 }}
+          className="flex flex-col gap-4"
+        >
           {faqs.map((faq, index) => (
-            <div 
-              key={index} 
-              className={`border border-[#1E1E2E] rounded-xl overflow-hidden transition-colors duration-300 ${
+            <motion.div 
+              key={index}
+              variants={itemVariants}
+              className={`border border-[#1E1E2E] rounded-xl overflow-hidden transition-colors duration-300 will-change-transform ${
                 openIndex === index ? "bg-[#111118] border-[#7C3AED]/30" : "bg-transparent hover:border-[#333344]"
               }`}
             >
@@ -80,9 +104,9 @@ export default function FaqSection() {
                   </p>
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
 
       </div>
     </section>

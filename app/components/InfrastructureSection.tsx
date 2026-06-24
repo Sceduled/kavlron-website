@@ -1,6 +1,14 @@
+"use client";
+
 import React from "react";
+import { motion, Variants } from "framer-motion";
 
 export default function InfrastructureSection() {
+  const itemVariants: Variants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+  };
+
   return (
     <section id="infrastructure" className="relative py-24 border-t border-[#1E1E2E] bg-[#0A0A0F] overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
@@ -9,19 +17,41 @@ export default function InfrastructureSection() {
           
           {/* Left Content */}
           <div className="flex-1 w-full">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white tracking-tight mb-4">
-              This isn&apos;t a tool.<br />
-              <span className="text-[#9CA3AF]">It&apos;s infrastructure that runs every hour.</span>
-            </h2>
+            <div className="mb-4">
+              <div className="overflow-hidden">
+                <motion.h2 
+                  initial={{ y: "100%" }}
+                  whileInView={{ y: 0 }}
+                  viewport={{ once: true, amount: 0.2 }}
+                  transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+                  className="text-3xl md:text-4xl lg:text-5xl font-bold text-white tracking-tight will-change-transform"
+                >
+                  This isn&apos;t a tool.<br />
+                  <span className="text-[#9CA3AF]">It&apos;s infrastructure that runs every hour.</span>
+                </motion.h2>
+              </div>
+            </div>
             
-            <p className="text-[#9CA3AF] text-base md:text-lg max-w-[600px] leading-relaxed mb-12">
+            <motion.p 
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              className="text-[#9CA3AF] text-base md:text-lg max-w-[600px] leading-relaxed mb-12"
+            >
               Unlike manual follow-up or automation templates, agentic systems don&apos;t sleep, don&apos;t miss signals, and don&apos;t send the same message to everyone. They act on what they know about each lead at the moment that matters.
-            </p>
+            </motion.p>
 
-            <div className="flex flex-col gap-8">
+            <motion.div 
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ staggerChildren: 0.15 }}
+              className="flex flex-col gap-8"
+            >
               
               {/* Point 1 */}
-              <div className="flex gap-4">
+              <motion.div variants={itemVariants} className="flex gap-4 will-change-transform">
                 <div className="flex-shrink-0 mt-1">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5 text-[#7C3AED]">
                     <circle cx="12" cy="12" r="10" />
@@ -35,10 +65,10 @@ export default function InfrastructureSection() {
                     No lead falls through because someone forgot. No follow-up is delayed because the team is busy. The system holds the process.
                   </p>
                 </div>
-              </div>
+              </motion.div>
 
               {/* Point 2 */}
-              <div className="flex gap-4">
+              <motion.div variants={itemVariants} className="flex gap-4 will-change-transform">
                 <div className="flex-shrink-0 mt-1">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5 text-[#7C3AED]">
                     <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
@@ -50,10 +80,10 @@ export default function InfrastructureSection() {
                     Each interaction feeds back into the system. Response patterns improve. Qualification tightens. Revenue recovery compounds over time.
                   </p>
                 </div>
-              </div>
+              </motion.div>
 
               {/* Point 3 */}
-              <div className="flex gap-4">
+              <motion.div variants={itemVariants} className="flex gap-4 will-change-transform">
                 <div className="flex-shrink-0 mt-1">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5 text-[#7C3AED]">
                     <polyline points="16 18 22 12 16 6" />
@@ -66,19 +96,25 @@ export default function InfrastructureSection() {
                     Every deployment is built for that specific business, their industry, their language, their qualification criteria. Can&apos;t be replaced by a subscription.
                   </p>
                 </div>
-              </div>
+              </motion.div>
 
-            </div>
+            </motion.div>
           </div>
 
           {/* Right Visual - Circular Loop */}
-          <div className="flex-1 w-full max-w-md lg:max-w-none flex justify-center items-center relative">
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 1, ease: "easeOut" }}
+            className="flex-1 w-full max-w-md lg:max-w-none flex justify-center items-center relative will-change-transform"
+          >
             <div className="relative w-[320px] h-[320px] md:w-[400px] md:h-[400px]">
               
               {/* Spinning subtle dashed circle */}
               <svg 
                 viewBox="0 0 400 400" 
-                className="absolute inset-0 w-full h-full animate-[spin_20s_linear_infinite]"
+                className="absolute inset-0 w-full h-full motion-safe:animate-[spin_20s_linear_infinite]"
                 aria-hidden="true"
               >
                 <circle 
@@ -99,33 +135,29 @@ export default function InfrastructureSection() {
 
               {/* Central Glowing Orb */}
               <div 
-                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 rounded-full bg-[#7C3AED]/10 blur-[40px] animate-[pulse_4s_ease-in-out_infinite]"
+                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 rounded-full bg-[#7C3AED]/10 blur-[40px] motion-safe:animate-[pulse_4s_ease-in-out_infinite]"
               />
 
               {/* Loop Items (Fixed positions) */}
-              {/* Top - Execution */}
               <div className="absolute top-[8%] left-1/2 -translate-x-1/2 bg-[#111118] border border-[#7C3AED]/30 px-4 py-2 rounded-lg shadow-[0_0_15px_rgba(124,58,237,0.1)] flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-[#7C3AED] animate-pulse" />
+                <span className="w-2 h-2 rounded-full bg-[#7C3AED] motion-safe:animate-pulse" />
                 <span className="text-white text-sm font-medium">Execution</span>
               </div>
 
-              {/* Right - Data */}
               <div className="absolute top-1/2 right-[0%] -translate-y-1/2 bg-[#111118] border border-[#1E1E2E] px-4 py-2 rounded-lg flex items-center gap-2">
                 <span className="text-[#9CA3AF] text-sm font-medium">Data</span>
               </div>
 
-              {/* Bottom - Optimization */}
               <div className="absolute bottom-[8%] left-1/2 -translate-x-1/2 bg-[#111118] border border-[#1E1E2E] px-4 py-2 rounded-lg flex items-center gap-2">
                 <span className="text-[#9CA3AF] text-sm font-medium">Optimization</span>
               </div>
 
-              {/* Left - Better Output */}
               <div className="absolute top-1/2 left-[0%] -translate-y-1/2 bg-[#111118] border border-[#1E1E2E] px-4 py-2 rounded-lg flex items-center gap-2">
                 <span className="text-[#9CA3AF] text-sm font-medium">Better Output</span>
               </div>
 
             </div>
-          </div>
+          </motion.div>
 
         </div>
       </div>

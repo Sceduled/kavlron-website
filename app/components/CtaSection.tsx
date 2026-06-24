@@ -1,6 +1,7 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
 
 export default function CtaSection() {
   const [formData, setFormData] = useState({
@@ -11,38 +12,70 @@ export default function CtaSection() {
     type: "Marketing agency looking to partner",
   });
 
+  const sectionRef = useRef<HTMLElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start end", "end start"],
+  });
+  // Parallax: background moves 10% slower than content
+  const bgY = useTransform(scrollYProgress, [0, 1], ["-5%", "5%"]);
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Placeholder for actual submission
     console.log("Form submitted:", formData);
     alert("Thank you! We'll be in touch shortly.");
   };
 
   return (
-    <section id="contact" className="relative py-24 border-t border-[#1E1E2E] overflow-hidden">
+    <section ref={sectionRef} id="contact" className="relative py-24 border-t border-[#1E1E2E] overflow-hidden">
       
-      {/* Background with purple gradient overlay */}
-      <div className="absolute inset-0 bg-[#0A0A0F]" />
-      <div 
-        className="absolute inset-0 opacity-60 pointer-events-none"
-        style={{
-          background: "radial-gradient(circle at center, rgba(124,58,237,0.15) 0%, rgba(10,10,15,0) 70%)"
-        }} 
-      />
+      {/* Parallax background */}
+      <motion.div 
+        className="absolute inset-0 will-change-transform"
+        style={{ y: bgY }}
+      >
+        <div className="absolute inset-0 bg-[#0A0A0F]" />
+        <div 
+          className="absolute inset-0 opacity-60 pointer-events-none"
+          style={{
+            background: "radial-gradient(circle at center, rgba(124,58,237,0.18) 0%, rgba(10,10,15,0) 70%)"
+          }} 
+        />
+      </motion.div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-10 flex flex-col items-center">
         
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white tracking-tight mb-4">
-            Revenue is leaking.<br />
-            <span className="text-[#9461FF]">Let&apos;s find exactly where.</span>
-          </h2>
-          <p className="text-[#9CA3AF] text-base md:text-lg max-w-[500px] mx-auto leading-relaxed">
+          <div className="overflow-hidden mb-4">
+            <motion.h2 
+              initial={{ y: "100%" }}
+              whileInView={{ y: 0 }}
+              viewport={{ once: true, amount: 0.5 }}
+              transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
+              className="text-3xl md:text-4xl lg:text-5xl font-bold text-white tracking-tight will-change-transform"
+            >
+              Revenue is leaking.<br />
+              <span className="text-[#9461FF]">Let&apos;s find exactly where.</span>
+            </motion.h2>
+          </div>
+          <motion.p 
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true, amount: 0.5 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="text-[#9CA3AF] text-base md:text-lg max-w-[500px] mx-auto leading-relaxed"
+          >
             In 20 minutes, we map your current sales process and identify the exact point where leads stop converting. No pitch. Just the diagnosis.
-          </p>
+          </motion.p>
         </div>
 
-        <div className="w-full max-w-[500px] bg-[#111118] border border-[#1E1E2E] rounded-2xl p-8 shadow-[0_0_40px_rgba(124,58,237,0.1)]">
+        <motion.div 
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.7, delay: 0.2 }}
+          className="w-full max-w-[500px] bg-[#111118] border border-[#1E1E2E] rounded-2xl p-8 shadow-[0_0_40px_rgba(124,58,237,0.1)] will-change-transform"
+        >
           <form onSubmit={handleSubmit} className="flex flex-col gap-5">
             
             <div className="flex flex-col gap-1.5">
@@ -80,7 +113,7 @@ export default function CtaSection() {
                 value={formData.phone}
                 onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                 className="w-full bg-[#0A0A0F] border border-[#1E1E2E] rounded-lg px-4 py-3 text-white placeholder-[#4B5563] focus:outline-none focus:border-[#7C3AED] transition-colors"
-                placeholder="+1 (555) 000-0000"
+                placeholder="+91 98765 43210"
               />
             </div>
 
@@ -137,7 +170,7 @@ export default function CtaSection() {
             </button>
 
           </form>
-        </div>
+        </motion.div>
 
       </div>
     </section>

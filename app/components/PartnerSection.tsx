@@ -1,6 +1,14 @@
+"use client";
+
 import React from "react";
+import { motion, Variants } from "framer-motion";
 
 export default function PartnerSection() {
+  const itemVariants: Variants = {
+    hidden: { opacity: 0, x: -30 },
+    visible: { opacity: 1, x: 0, transition: { duration: 0.6, ease: "easeOut" } },
+  };
+
   return (
     <section id="partner" className="relative py-32 border-t border-[#1E1E2E] overflow-hidden">
       
@@ -15,17 +23,29 @@ export default function PartnerSection() {
       
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-10">
         
-        <div className="mb-20">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white tracking-tight max-w-2xl">
+        <div className="mb-20 overflow-hidden pb-2">
+          <motion.h2 
+            initial={{ y: "100%" }}
+            whileInView={{ y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
+            className="text-3xl md:text-4xl lg:text-5xl font-bold text-white tracking-tight max-w-2xl will-change-transform"
+          >
             You bring the clients.<br />
             <span className="text-[#9461FF]">We handle everything else.</span>
-          </h2>
+          </motion.h2>
         </div>
 
-        <div className="max-w-4xl flex flex-col gap-12">
+        <motion.div 
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.15 }}
+          transition={{ staggerChildren: 0.18 }}
+          className="max-w-4xl flex flex-col gap-12"
+        >
           
           {/* Point 1 */}
-          <div className="flex flex-col sm:flex-row gap-6">
+          <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-6 will-change-transform">
             <div className="flex-shrink-0 w-14 h-14 rounded-2xl bg-[#0A0A0F] border border-[#1E1E2E] shadow-[0_4px_20px_rgba(124,58,237,0.15)] flex items-center justify-center">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6 text-[#9461FF]">
                 <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
@@ -37,10 +57,10 @@ export default function PartnerSection() {
                 You connect us with your client. We build the system, configure it, test it, launch it, and manage it. You don&apos;t touch anything technical.
               </p>
             </div>
-          </div>
+          </motion.div>
 
           {/* Point 2 */}
-          <div className="flex flex-col sm:flex-row gap-6">
+          <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-6 will-change-transform">
             <div className="flex-shrink-0 w-14 h-14 rounded-2xl bg-[#0A0A0F] border border-[#1E1E2E] shadow-[0_4px_20px_rgba(124,58,237,0.15)] flex items-center justify-center">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6 text-[#9461FF]">
                 <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10" />
@@ -52,10 +72,10 @@ export default function PartnerSection() {
                 You&apos;re no longer just the agency that runs ads. You&apos;re the agency that runs ads and makes sure every lead converts. No other agency in your market is offering this.
               </p>
             </div>
-          </div>
+          </motion.div>
 
           {/* Point 3 */}
-          <div className="flex flex-col sm:flex-row gap-6">
+          <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-6 will-change-transform">
             <div className="flex-shrink-0 w-14 h-14 rounded-2xl bg-[#0A0A0F] border border-[#1E1E2E] shadow-[0_4px_20px_rgba(124,58,237,0.15)] flex items-center justify-center">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6 text-[#9461FF]">
                 <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
@@ -67,10 +87,10 @@ export default function PartnerSection() {
                 Every client you bring in, you earn a share of the ongoing revenue. Not a one-time referral fee. Revenue that comes in every month for as long as the client is live.
               </p>
             </div>
-          </div>
+          </motion.div>
 
           {/* Point 4 */}
-          <div className="flex flex-col sm:flex-row gap-6">
+          <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-6 will-change-transform">
             <div className="flex-shrink-0 w-14 h-14 rounded-2xl bg-[#0A0A0F] border border-[#1E1E2E] shadow-[0_4px_20px_rgba(124,58,237,0.15)] flex items-center justify-center">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6 text-[#9461FF]">
                 <polygon points="12 2 2 7 12 12 22 7 12 2" />
@@ -84,9 +104,9 @@ export default function PartnerSection() {
                 One login. See all your clients&apos; systems in one place. Lead flow, qualification rates, scores, conversation volumes. You know exactly which client is getting results.
               </p>
             </div>
-          </div>
+          </motion.div>
 
-        </div>
+        </motion.div>
       </div>
     </section>
   );
