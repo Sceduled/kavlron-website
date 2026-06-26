@@ -46,6 +46,7 @@ export default function FaqSection() {
               className="border-b border-border bg-background transition-colors hover:bg-surface"
             >
               <button
+                suppressHydrationWarning
                 onClick={() =>
                   setOpenIndex(openIndex === index ? null : index)
                 }

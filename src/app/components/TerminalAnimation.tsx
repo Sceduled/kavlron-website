@@ -66,20 +66,20 @@ export default function TerminalAnimation() {
   };
 
   return (
-    <div ref={containerRef} className="w-full max-w-2xl mx-auto mt-16 lg:mt-20">
-      <div className="terminal-glow rounded-lg border border-border overflow-hidden bg-surface">
+    <div ref={containerRef} className="w-full max-w-2xl mt-16 lg:mt-24 z-10 relative">
+      <div className="rounded-none border border-border overflow-hidden bg-surface-card">
         {/* Terminal header */}
-        <div className="flex items-center gap-2 px-4 py-3 border-b border-border">
-          <div className="w-3 h-3 rounded-full bg-[#FF5F57] opacity-70" />
-          <div className="w-3 h-3 rounded-full bg-[#FFBD2E] opacity-70" />
-          <div className="w-3 h-3 rounded-full bg-[#28CA41] opacity-70" />
+        <div className="flex items-center gap-2 px-4 py-3 border-b border-border bg-surface">
+          <div className="w-2.5 h-2.5 rounded-full bg-border" />
+          <div className="w-2.5 h-2.5 rounded-full bg-border" />
+          <div className="w-2.5 h-2.5 rounded-full bg-border" />
           <span className="ml-3 text-xs font-mono text-text-dim tracking-wider uppercase">
             kalvron-engine v2.1
           </span>
         </div>
 
         {/* Terminal body */}
-        <div className="p-5 lg:p-6 font-mono text-sm leading-7 min-h-[220px]">
+        <div className="p-5 lg:p-6 font-mono text-[13px] md:text-sm leading-7 min-h-[220px]">
           {TERMINAL_LINES.map((line, index) => {
             if (index >= visibleLines) return null;
             const charsToShow = displayedChars[index] ?? 0;
@@ -91,20 +91,20 @@ export default function TerminalAnimation() {
                 key={index}
                 className={`${
                   line.highlight
-                    ? "text-accent-red font-semibold"
+                    ? "text-accent-amber font-bold"
                     : "text-text-muted"
-                } ${index > 0 ? "mt-1" : ""}`}
+                } ${index > 0 ? "mt-1.5" : ""}`}
               >
                 {displayText}
                 {isTyping && (
-                  <span className="terminal-cursor inline-block w-2 h-4 bg-accent-purple ml-0.5 align-middle" />
+                  <span className="terminal-cursor inline-block w-2.5 h-[1.2em] bg-accent-amber ml-0.5 align-middle" />
                 )}
               </div>
             );
           })}
           {visibleLines === 0 && (
             <div className="text-text-dim">
-              <span className="terminal-cursor inline-block w-2 h-4 bg-accent-purple align-middle" />
+              <span className="terminal-cursor inline-block w-2.5 h-[1.2em] bg-accent-amber align-middle" />
             </div>
           )}
         </div>

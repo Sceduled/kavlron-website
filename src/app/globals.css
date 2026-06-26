@@ -1,35 +1,27 @@
 @import "tailwindcss";
 
 :root {
-  --background: #0A0A0F;
-  --foreground: #EDEDED;
-  --color-accent-red: #E53E3E;
-  --color-accent-purple: #7C3AED;
-  --color-accent-purple-hover: #6D28D9;
-  --color-text-muted: #8A8A9A;
-  --color-text-dim: #555566;
-  --color-border: rgba(255, 255, 255, 0.08);
-  --color-surface: rgba(255, 255, 255, 0.03);
-  --color-surface-hover: rgba(255, 255, 255, 0.06);
+  --background: #08080A;
+  --foreground: #E8E8EC;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --color-accent-red: var(--color-accent-red);
-  --color-accent-purple: var(--color-accent-purple);
-  --color-accent-purple-hover: var(--color-accent-purple-hover);
-  --color-text-muted: var(--color-text-muted);
-  --color-text-dim: var(--color-text-dim);
-  --color-border: var(--color-border);
-  --color-surface: var(--color-surface);
-  --color-surface-hover: var(--color-surface-hover);
+@theme {
+  --color-background: #08080A;
+  --color-foreground: #E8E8EC;
+  --color-accent-amber: #D4622B;
+  --color-accent-blue: #6B7FA3;
+  --color-text-muted: #B8B8BD;
+  --color-text-dim: #77777D;
+  --color-surface: #111114;
+  --color-surface-card: #131316;
+  --color-border: #222228;
   --font-sans: var(--font-inter);
   --font-mono: var(--font-jetbrains-mono);
 }
 
 html {
   scroll-behavior: smooth;
+  background-color: var(--background);
 }
 
 body {
@@ -42,7 +34,7 @@ body {
 
 /* Selection */
 ::selection {
-  background: rgba(124, 58, 237, 0.3);
+  background: var(--color-accent-amber);
   color: #fff;
 }
 
@@ -52,16 +44,15 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: transparent;
+  background: var(--background);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 3px;
+  background: var(--color-border);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(255, 255, 255, 0.2);
+  background: var(--color-text-dim);
 }
 
 /* Terminal cursor blink */
@@ -74,23 +65,13 @@ body {
   animation: blink 1s step-end infinite;
 }
 
-/* Subtle glow for terminal */
-@keyframes terminal-glow {
-  0%, 100% { box-shadow: 0 0 30px rgba(124, 58, 237, 0.05); }
-  50% { box-shadow: 0 0 50px rgba(124, 58, 237, 0.1); }
-}
-
-.terminal-glow {
-  animation: terminal-glow 4s ease-in-out infinite;
-}
-
 /* Watermark text */
 .watermark-text {
-  font-size: clamp(8rem, 18vw, 20rem);
-  font-weight: 700;
-  color: rgba(255, 255, 255, 0.03);
-  line-height: 0.85;
-  letter-spacing: -0.04em;
+  font-size: clamp(10rem, 25vw, 30rem);
+  font-weight: 800;
+  color: rgba(255, 255, 255, 0.02);
+  line-height: 0.75;
+  letter-spacing: -0.05em;
   user-select: none;
   pointer-events: none;
 }

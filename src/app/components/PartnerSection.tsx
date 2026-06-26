@@ -1,133 +1,133 @@
+import { Briefcase, Shield, CircleDollarSign, LayoutDashboard } from "lucide-react";
+
+const partnerFeatures = [
+  {
+    icon: Briefcase,
+    title: "Zero operational work",
+    description: "You connect us with your client. We build the system, configure it, test it, launch it, and manage it. You don't touch anything technical."
+  },
+  {
+    icon: CircleDollarSign,
+    title: "Recurring revenue on every client",
+    description: "Every client you bring in, you earn a share of the ongoing revenue. Not a one-time referral fee. Revenue that comes in every month for as long as the client is live."
+  },
+  {
+    icon: Shield,
+    title: "Your service becomes untouchable",
+    description: "You're no longer just the agency that runs ads. You're the agency that runs ads and makes sure every lead converts. No other agency in your market is offering this."
+  },
+  {
+    icon: LayoutDashboard,
+    title: "Admin dashboard",
+    description: "One login. See all your clients' systems in one place. Lead flow, qualification rates, scores, conversation volumes. You know exactly which client is getting results."
+  }
+];
+
 export default function PartnerSection() {
+  const Icon0 = partnerFeatures[0].icon;
+  const Icon1 = partnerFeatures[1].icon;
+  const Icon2 = partnerFeatures[2].icon;
+  const Icon3 = partnerFeatures[3].icon;
+
   return (
-    <section
-      id="partner"
-      className="relative flex min-h-screen flex-col items-center justify-center bg-background px-6 py-24 lg:px-10 overflow-hidden"
-    >
-      {/* Subtle background differentiation for Partner section */}
-      <div className="absolute inset-0 bg-accent-blue/5 pointer-events-none" />
+    <section className="bg-background px-6 py-24 lg:px-10 overflow-hidden" id="partner">
+      <div className="mx-auto w-full max-w-7xl">
+        <div className="mb-20 text-center">
+          <h2 className="text-[40px] font-bold leading-[1.1] tracking-tighter text-white sm:text-[64px] drop-shadow-xl">
+            You bring the clients.<br/>
+            <span className="text-accent-amber">We handle everything else.</span>
+          </h2>
+        </div>
 
-      <div className="relative z-10 mx-auto w-full max-w-4xl">
-        <h2 className="mb-20 text-[40px] font-bold leading-[1.1] tracking-tighter text-foreground sm:text-[56px] text-center">
-          You bring the clients.
-          <br />
-          <span className="text-text-muted">We handle everything else.</span>
-        </h2>
+        {/* Cinematic Asymmetric HUD Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 border border-border/40 relative bg-surface-card/10 backdrop-blur-sm">
+          
+          {/* Corner Crosshairs */}
+          <div className="absolute -top-[14px] -left-[6px] text-border/60 text-xl font-light pointer-events-none">+</div>
+          <div className="absolute -top-[14px] -right-[6px] text-border/60 text-xl font-light pointer-events-none">+</div>
+          <div className="absolute -bottom-[14px] -left-[6px] text-border/60 text-xl font-light pointer-events-none">+</div>
+          <div className="absolute -bottom-[14px] -right-[6px] text-border/60 text-xl font-light pointer-events-none">+</div>
 
-        {/* 4 points in a vertical stack */}
-        <div className="flex flex-col gap-8">
-          {/* Point 1 */}
-          <div className="flex flex-col md:flex-row gap-6 border border-border bg-surface-card p-8 md:items-center">
-            <div className="flex h-12 w-12 shrink-0 items-center justify-center bg-accent-amber/10 text-accent-amber border border-accent-amber/20">
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="square"
-              >
-                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
-                <polyline points="3.27 6.96 12 12.01 20.73 6.96" />
-                <line x1="12" y1="22.08" x2="12" y2="12" />
-              </svg>
+          {/* Top Row */}
+          
+          {/* Feature 0 - Small Left */}
+          <div className="lg:col-span-4 border-b lg:border-r border-border/40 p-8 md:p-10 relative group overflow-hidden flex flex-col justify-between">
+            <div className="absolute top-0 right-0 p-4 font-mono text-xs text-text-muted/50">PRT.01 // OPS</div>
+            <div className="h-10 w-10 border border-foreground/30 bg-foreground/10 flex items-center justify-center mb-16">
+              <Icon0 className="h-5 w-5 text-foreground" />
             </div>
-            <div>
-              <h3 className="mb-2 text-xl font-bold tracking-tight text-foreground">
-                Zero operational work
-              </h3>
-              <p className="text-sm leading-relaxed text-text-muted md:text-base">
-                You connect us with your client. We build the system, configure
-                it, test it, launch it, and manage it. You don&apos;t touch
-                anything technical.
-              </p>
+            <div className="relative z-10">
+              <h3 className="text-xl font-bold text-white mb-4 tracking-tight">{partnerFeatures[0].title}</h3>
+              <p className="text-text-muted leading-relaxed text-sm font-medium">{partnerFeatures[0].description}</p>
             </div>
           </div>
 
-          {/* Point 2 */}
-          <div className="flex flex-col md:flex-row gap-6 border border-border bg-surface-card p-8 md:items-center">
-            <div className="flex h-12 w-12 shrink-0 items-center justify-center bg-accent-amber/10 text-accent-amber border border-accent-amber/20">
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="square"
-              >
-                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-              </svg>
+          {/* Feature 1 - Massive Financial Right */}
+          <div className="lg:col-span-8 border-b border-border/40 p-8 md:p-16 relative group overflow-hidden flex flex-col justify-center">
+            <div className="absolute top-0 right-0 p-4 font-mono text-xs text-accent-amber/50">PRT.02 // REV</div>
+            
+            {/* Background glowing money element */}
+            <div className="absolute -right-10 top-1/2 -translate-y-1/2 text-[250px] font-mono font-bold text-accent-amber/30 pointer-events-none transition-transform duration-1000 group-hover:scale-110 animate-[pulse_3s_ease-in-out_infinite] drop-shadow-[0_0_40px_rgba(212,98,43,0.6)]">
+              $
             </div>
-            <div>
-              <h3 className="mb-2 text-xl font-bold tracking-tight text-foreground">
-                Your service becomes untouchable
-              </h3>
-              <p className="text-sm leading-relaxed text-text-muted md:text-base">
-                You&apos;re no longer just the agency that runs ads. You&apos;re
-                the agency that runs ads and makes sure every lead converts. No
-                other agency in your market is offering this.
-              </p>
-            </div>
-          </div>
-
-          {/* Point 3 */}
-          <div className="flex flex-col md:flex-row gap-6 border border-border bg-surface-card p-8 md:items-center">
-            <div className="flex h-12 w-12 shrink-0 items-center justify-center bg-accent-amber/10 text-accent-amber border border-accent-amber/20">
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="square"
-              >
-                <line x1="12" y1="1" x2="12" y2="23" />
-                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
-              </svg>
-            </div>
-            <div>
-              <h3 className="mb-2 text-xl font-bold tracking-tight text-foreground">
-                Recurring revenue on every client
-              </h3>
-              <p className="text-sm leading-relaxed text-text-muted md:text-base">
-                Every client you bring in, you earn a share of the ongoing
-                revenue. Not a one-time referral fee. Revenue that comes in
-                every month for as long as the client is live.
-              </p>
+            
+            <div className="relative z-10 flex flex-col md:flex-row items-start gap-8 md:gap-12">
+              <div className="h-16 w-16 shrink-0 border border-accent-amber/30 bg-accent-amber/10 flex items-center justify-center">
+                <Icon1 className="h-8 w-8 text-accent-amber" />
+              </div>
+              <div>
+                <h3 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6 tracking-tighter">
+                  {partnerFeatures[1].title}
+                </h3>
+                <p className="text-text-muted leading-relaxed font-medium max-w-xl text-lg">
+                  {partnerFeatures[1].description}
+                </p>
+                <div className="mt-8 flex items-center gap-4">
+                  <div className="h-[1px] w-12 bg-accent-amber/50" />
+                  <span className="font-mono text-xs text-accent-amber font-bold tracking-widest uppercase">Ongoing Partnership</span>
+                </div>
+              </div>
             </div>
           </div>
 
-          {/* Point 4 */}
-          <div className="flex flex-col md:flex-row gap-6 border border-border bg-surface-card p-8 md:items-center">
-            <div className="flex h-12 w-12 shrink-0 items-center justify-center bg-accent-amber/10 text-accent-amber border border-accent-amber/20">
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="square"
-              >
-                <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
-                <line x1="3" y1="9" x2="21" y2="9" />
-                <line x1="9" y1="21" x2="9" y2="9" />
-              </svg>
+          {/* Bottom Row */}
+
+          {/* Feature 2 - Wide Left */}
+          <div className="lg:col-span-7 border-b lg:border-b-0 lg:border-r border-border/40 p-8 md:p-12 relative group overflow-hidden">
+            <div className="absolute top-0 right-0 p-4 font-mono text-xs text-text-muted/50">PRT.03 // MOAT</div>
+            
+            {/* Abstract Shield Wireframe */}
+            <div className="absolute right-0 bottom-0 w-64 h-64 opacity-30 pointer-events-none animate-[pulse_4s_ease-in-out_infinite] drop-shadow-[0_0_20px_rgba(255,255,255,0.4)]">
+               <svg viewBox="0 0 100 100" className="w-full h-full fill-white">
+                 <path d="M50 0 L100 20 L100 60 C100 80 50 100 50 100 C50 100 0 80 0 60 L0 20 Z" />
+               </svg>
             </div>
-            <div>
-              <h3 className="mb-2 text-xl font-bold tracking-tight text-foreground">
-                Admin dashboard
-              </h3>
-              <p className="text-sm leading-relaxed text-text-muted md:text-base">
-                One login. See all your clients&apos; systems in one place. Lead
-                flow, qualification rates, scores, conversation volumes. You
-                know exactly which client is getting results.
-              </p>
+
+            <div className="h-12 w-12 border border-accent-blue/30 bg-accent-blue/10 flex items-center justify-center mb-10">
+              <Icon2 className="h-6 w-6 text-accent-blue" />
+            </div>
+            <div className="relative z-10">
+              <h3 className="text-2xl font-bold text-white mb-4 tracking-tight">{partnerFeatures[2].title}</h3>
+              <p className="text-text-muted leading-relaxed font-medium max-w-lg">{partnerFeatures[2].description}</p>
             </div>
           </div>
+
+          {/* Feature 3 - Small Right */}
+          <div className="lg:col-span-5 p-8 md:p-10 relative group overflow-hidden flex flex-col justify-end">
+            <div className="absolute top-0 right-0 p-4 font-mono text-xs text-text-muted/50">PRT.04 // CTL</div>
+            <div className="absolute -left-12 -bottom-12 text-[150px] font-bold text-foreground/20 leading-none font-mono pointer-events-none animate-[pulse_5s_ease-in-out_infinite] drop-shadow-[0_0_20px_rgba(255,255,255,0.3)]">
+              <LayoutDashboard className="w-[300px] h-[300px]" />
+            </div>
+            
+            <div className="relative z-10 mt-16 lg:mt-24">
+              <h3 className="text-xl font-bold text-white mb-4 tracking-tight flex items-center gap-3">
+                <Icon3 className="h-5 w-5 text-foreground" />
+                {partnerFeatures[3].title}
+              </h3>
+              <p className="text-text-muted leading-relaxed text-sm font-medium">{partnerFeatures[3].description}</p>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>

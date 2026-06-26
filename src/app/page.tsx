@@ -1,7 +1,6 @@
 import TerminalAnimation from "./components/TerminalAnimation";
 import ProblemSection from "./components/ProblemSection";
 import HowItWorksSection from "./components/HowItWorksSection";
-import ClientViewSection from "./components/ClientViewSection";
 import PartnerSection from "./components/PartnerSection";
 import BuiltForSection from "./components/BuiltForSection";
 import OperationalDeltaSection from "./components/OperationalDeltaSection";
@@ -14,39 +13,52 @@ import FadeIn from "./components/FadeIn";
 
 export default function Home() {
   return (
-    <div className="relative min-h-screen overflow-hidden bg-background selection:bg-accent-amber selection:text-white">
+    <div className="relative min-h-screen font-sans antialiased text-foreground selection:bg-accent-amber selection:text-white">
+      {/* ─── Global Fixed Background Video ─── */}
+      <div className="fixed inset-0 z-0 pointer-events-none bg-background">
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="w-full h-full object-cover object-[center_20%] opacity-80"
+        >
+          <source src="/hero-bg.mp4" type="video/mp4" />
+        </video>
+      </div>
+
       {/* ─── Navigation ─── */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-transparent pt-4">
+      <nav className="absolute top-0 left-0 right-0 z-50 pt-4">
         <div className="mx-auto max-w-7xl px-6 lg:px-10">
           <div className="flex h-20 items-center justify-between">
             {/* Logo */}
             <a href="#" className="flex items-center gap-3 group">
-              {/* K logo mark - using the cold steel blue accent */}
-              <div className="flex h-8 w-8 items-center justify-center bg-accent-blue/10">
-                <span className="font-mono text-sm font-bold text-accent-blue">K</span>
-              </div>
-              <span className="text-xl font-bold tracking-tight text-foreground">
+              {/* Logo */}
+            <div className="flex items-center gap-3">
+              <img src="/logo-letter.png" alt="Kalvron Logo" className="h-12 w-auto drop-shadow-md" />
+              <span className="text-2xl font-bold tracking-tight text-white drop-shadow-md text-shadow-sm">
                 Kalvron
               </span>
+            </div>
             </a>
 
-            {/* Nav Links */}
-            <div className="hidden items-center gap-12 md:flex">
+            {/* Desktop Nav */}
+            <div className="hidden md:flex md:items-center md:gap-8">
               <a
                 href="#how-it-works"
-                className="text-sm font-medium text-text-muted transition-colors duration-200 hover:text-foreground"
+                className="text-sm font-bold tracking-wide text-white drop-shadow-md text-shadow-sm transition-colors hover:text-accent-amber"
               >
                 How It Works
               </a>
               <a
                 href="#what-it-fixes"
-                className="text-sm font-medium text-text-muted transition-colors duration-200 hover:text-foreground"
+                className="text-sm font-bold tracking-wide text-white drop-shadow-md text-shadow-sm transition-colors hover:text-accent-amber"
               >
                 What It Fixes
               </a>
               <a
                 href="#partner"
-                className="inline-flex items-center justify-center border border-border px-6 py-2.5 text-sm font-bold text-foreground transition-all duration-200 hover:bg-foreground hover:text-background"
+                className="inline-flex h-10 items-center justify-center border border-border/50 bg-background/50 backdrop-blur-md px-6 text-sm font-bold tracking-wide text-white shadow-xl transition-colors hover:bg-white hover:text-background"
               >
                 Get in touch
               </a>
@@ -76,20 +88,7 @@ export default function Home() {
       </nav>
 
       {/* ─── Hero Section ─── */}
-      <section className="relative flex min-h-[90vh] flex-col justify-center px-6 pt-32 pb-24 lg:px-10 overflow-hidden">
-        {/* Background Video */}
-        <div className="absolute inset-0 z-0 pointer-events-none bg-background">
-          <video
-            autoPlay
-            loop
-            muted
-            playsInline
-            className="w-full h-full object-cover object-[center_20%] opacity-80"
-          >
-            <source src="/hero-bg.mp4" type="video/mp4" />
-          </video>
-        </div>
-
+      <section className="relative z-10 flex min-h-[90vh] flex-col justify-center px-6 pt-32 pb-24 lg:px-10 overflow-hidden">
         {/* Background watermark */}
         <div className="pointer-events-none absolute bottom-[-5%] left-0 right-0 select-none overflow-hidden z-0">
           <div className="watermark-text whitespace-nowrap pl-4">
@@ -121,12 +120,12 @@ export default function Home() {
           {/* Subtitle */}
           <div className="mt-12 flex max-w-[640px] gap-6 drop-shadow-xl">
             <div className="hidden sm:block w-12 h-[2px] bg-border mt-3 shrink-0" />
-            <p className="text-base leading-relaxed text-text-muted sm:text-lg">
-              Kalvron builds lead handling systems that sit between your
-              client&apos;s ad campaign and their sales team. Every lead gets
-              engaged in 60 seconds. Qualified automatically. Only the serious
-              ones reach the team.
-            </p>
+            <p className="mt-8 max-w-[600px] text-lg font-medium leading-relaxed text-white drop-shadow-md text-shadow-sm sm:text-xl">
+            Kalvron builds lead handling systems that sit between your
+            client&apos;s ad campaign and their sales team. Every lead gets
+            engaged in 60 seconds. Qualified automatically. Only the serious
+            ones reach the team.
+          </p>
           </div>
 
           {/* CTAs */}
@@ -161,10 +160,8 @@ export default function Home() {
         <HowItWorksSection />
       </FadeIn>
 
-      {/* Client View Section (Phase 4) */}
-      <FadeIn delay={100}>
-        <ClientViewSection />
-      </FadeIn>
+      {/* Smooth Transition Into Solid Block */}
+      <div className="relative z-10 w-full h-48 sm:h-64 bg-gradient-to-b from-transparent to-background pointer-events-none" />
 
       {/* Partner Section (Phase 4) */}
       <FadeIn delay={100}>
@@ -195,6 +192,9 @@ export default function Home() {
       <FadeIn delay={100}>
         <FaqSection />
       </FadeIn>
+
+      {/* Smooth Transition Out of Solid Block */}
+      <div className="relative z-10 w-full h-48 sm:h-64 bg-gradient-to-b from-background to-transparent pointer-events-none" />
 
       {/* CTA Section (Phase 7) */}
       <FadeIn delay={100}>
