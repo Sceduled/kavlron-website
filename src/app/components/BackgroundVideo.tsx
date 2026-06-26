@@ -9,18 +9,29 @@ export default function BackgroundVideo() {
     const video = videoRef.current;
     if (!video) return;
 
-    // Force play on mount to bypass strict browser autoplay policies
-    // This is especially needed for Edge, Safari, and mobile browsers
+    // Force attributes at the DOM level to bypass React attribute diffing bugs
+    video.loop = true;
+    video.muted = true;
+    video.playsInline = true;
+
     const attemptPlay = () => {
       video.play().catch((error) => {
         console.warn("Autoplay was prevented. Retrying...", error);
-        // Optional: you can add a small timeout and retry if it's a transient state
       });
     };
 
     attemptPlay();
 
-    // Also try playing on first user interaction if it failed
+    // Chromium browsers (Edge, Brave, Chrome) sometimes hang on the last frame of MP4s
+    // when looping. This timeupdate listener forces a rewind just before it hangs.
+    const handleTimeUpdate = () => {
+      if (video.duration && video.currentTime >= video.duration - 0.1) {
+        video.currentTime = 0;
+        attemptPlay();
+      }
+    };
+    video.addEventListener("timeupdate", handleTimeUpdate);
+
     const handleInteraction = () => {
       attemptPlay();
       document.removeEventListener("touchstart", handleInteraction);
@@ -33,6 +44,7 @@ export default function BackgroundVideo() {
     return () => {
       document.removeEventListener("touchstart", handleInteraction);
       document.removeEventListener("click", handleInteraction);
+      video.removeEventListener("timeupdate", handleTimeUpdate);
     };
   }, []);
 
