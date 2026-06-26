@@ -41,9 +41,15 @@ export default function BackgroundVideo() {
       <video
         ref={videoRef}
         autoPlay
-        loop
+        loop={true}
         muted
         playsInline
+        onEnded={(e) => {
+          // Hard fallback for Edge failing to honor the standard loop attribute
+          const video = e.currentTarget;
+          video.currentTime = 0;
+          video.play().catch(console.error);
+        }}
         className="w-full h-full object-cover object-[center_20%] opacity-80"
         src="/hero-bg.mp4"
       />
