@@ -10,27 +10,13 @@ import FaqSection from "./components/FaqSection";
 import CtaSection from "./components/CtaSection";
 import Footer from "./components/Footer";
 import FadeIn from "./components/FadeIn";
+import BackgroundVideo from "./components/BackgroundVideo";
 
 export default function Home() {
   return (
     <div className="relative min-h-screen font-sans antialiased text-foreground selection:bg-accent-amber selection:text-white">
       {/* ─── Global Fixed Background Video ─── */}
-      <div 
-        className="fixed inset-0 z-0 pointer-events-none bg-background"
-        dangerouslySetInnerHTML={{
-          __html: `
-            <video
-              autoplay
-              loop
-              muted
-              playsinline
-              style="width: 100%; height: 100%; object-fit: cover; object-position: center 20%; opacity: 0.8;"
-            >
-              <source src="/hero-bg.mp4" type="video/mp4" />
-            </video>
-          `
-        }}
-      />
+      <BackgroundVideo />
 
       {/* ─── Navigation ─── */}
       <nav className="absolute top-0 left-0 right-0 z-50 pt-4">
