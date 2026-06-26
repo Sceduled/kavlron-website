@@ -12,7 +12,7 @@ export default function HowItWorksSection() {
         </h2>
 
         {/* Cinematic HUD Timeline */}
-        <div className="relative border border-border/40 bg-surface-card/10 backdrop-blur-sm p-8 md:p-16 shadow-[0_0_50px_rgba(0,0,0,0.5)]">
+        <div className="relative border border-border/40 bg-background/80 p-8 md:p-16 shadow-[0_0_50px_rgba(0,0,0,0.5)]">
           
           {/* Corner Crosshairs */}
           <div className="absolute -top-[14px] -left-[6px] text-accent-blue/80 text-xl font-bold pointer-events-none drop-shadow-[0_0_5px_rgba(107,127,163,0.8)]">+</div>

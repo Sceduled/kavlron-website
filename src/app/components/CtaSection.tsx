@@ -85,7 +85,7 @@ export default function CtaSection() {
         </div>
 
         {/* Form Card */}
-        <div className="border border-border/30 bg-background/20 backdrop-blur-md p-8 md:p-10 shadow-[0_0_50px_rgba(0,0,0,0.5)]">
+        <div className="border border-border/30 bg-background/80 p-8 md:p-10 shadow-[0_0_50px_rgba(0,0,0,0.5)]">
           <form className="flex flex-col gap-6">
             <div className="flex flex-col gap-2">
               <label htmlFor="name" className="text-xs font-bold uppercase tracking-widest text-text-muted">

@@ -17,7 +17,7 @@ export default function ProblemSection() {
         </div>
 
         {/* Cinematic HUD Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 border border-border/40 relative bg-surface-card/10 backdrop-blur-sm shadow-[0_0_50px_rgba(0,0,0,0.5)]">
+        <div className="grid grid-cols-1 lg:grid-cols-12 border border-border/40 relative bg-background/80 shadow-[0_0_50px_rgba(0,0,0,0.5)]">
           
           {/* Highly Visible Animated Background Grid Layer */}
           <div className="absolute inset-0 pointer-events-none overflow-hidden">
@@ -109,7 +109,7 @@ export default function ProblemSection() {
           </div>
 
           {/* Bottom Massive Alert Block */}
-          <div className="lg:col-span-12 border-t border-border/40 bg-red-950/20 backdrop-blur-md p-10 md:p-16 relative overflow-hidden">
+          <div className="lg:col-span-12 border-t border-border/40 bg-red-950/60 p-10 md:p-16 relative overflow-hidden">
             {/* Highly Visible Animated Background */}
             <div className="absolute inset-0 pointer-events-none flex items-center justify-center opacity-30">
                <div className="w-[120%] h-[200%] bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-red-500/20 via-transparent to-transparent animate-[pulse_2s_ease-in-out_infinite]" />
