@@ -1,6 +1,8 @@
 import TerminalAnimation from "./components/TerminalAnimation";
 import ProblemSection from "./components/ProblemSection";
 import HowItWorksSection from "./components/HowItWorksSection";
+import ClientViewSection from "./components/ClientViewSection";
+import PartnerSection from "./components/PartnerSection";
 
 export default function Home() {
   return (
@@ -147,8 +149,11 @@ export default function Home() {
       {/* How It Works Section (Phase 3) */}
       <HowItWorksSection />
 
-      {/* Placeholder sections for anchor targets */}
-      <section id="partner" className="min-h-screen bg-surface-card" />
+      {/* Client View Section (Phase 4) */}
+      <ClientViewSection />
+
+      {/* Partner Section (Phase 4) */}
+      <PartnerSection />
     </div>
   );
 }
