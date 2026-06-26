@@ -5,6 +5,9 @@ import ClientViewSection from "./components/ClientViewSection";
 import PartnerSection from "./components/PartnerSection";
 import BuiltForSection from "./components/BuiltForSection";
 import OperationalDeltaSection from "./components/OperationalDeltaSection";
+import InfrastructureSection from "./components/InfrastructureSection";
+import TrustSection from "./components/TrustSection";
+import FaqSection from "./components/FaqSection";
 
 export default function Home() {
   return (
@@ -162,6 +165,15 @@ export default function Home() {
 
       {/* Operational Delta Section (Phase 5) */}
       <OperationalDeltaSection />
+
+      {/* Infrastructure Section (Phase 6) */}
+      <InfrastructureSection />
+
+      {/* Trust Section (Phase 6) */}
+      <TrustSection />
+
+      {/* FAQ Section (Phase 6) */}
+      <FaqSection />
     </div>
   );
 }
