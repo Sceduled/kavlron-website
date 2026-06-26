@@ -51,10 +51,7 @@ export default function BackgroundVideo() {
   }, []);
 
   return (
-    <div 
-      className="fixed inset-0 z-0 pointer-events-none bg-background overflow-hidden"
-      style={{ transform: "translate3d(0,0,0)" }} // Force Hardware Acceleration
-    >
+    <div className="fixed inset-0 z-0 pointer-events-none bg-background overflow-hidden">
       <video
         ref={videoRef}
         autoPlay
@@ -62,8 +59,7 @@ export default function BackgroundVideo() {
         muted
         playsInline
         preload="auto"
-        className="absolute top-1/2 left-1/2 min-w-full min-h-full w-auto h-auto -translate-x-1/2 -translate-y-1/2 object-cover opacity-80"
-        style={{ transform: "translate(-50%, -50%) translateZ(0)" }}
+        className="w-full h-full object-cover object-[center_20%] opacity-80"
         src="/hero-bg.mp4"
       />
     </div>
