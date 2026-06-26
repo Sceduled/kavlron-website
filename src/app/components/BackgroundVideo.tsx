@@ -9,45 +9,9 @@ export default function BackgroundVideo() {
     const video = videoRef.current;
     if (!video) return;
 
-    // Force attributes at the DOM level
-    video.loop = true;
-    video.muted = true;
-    video.playsInline = true;
-    video.setAttribute("playsinline", "true");
-    video.setAttribute("webkit-playsinline", "true");
-    video.setAttribute("preload", "auto");
-
-    const attemptPlay = () => {
-      if (video.paused) {
-        video.play().catch(() => {
-          // Silent catch to prevent console spam
-        });
-      }
-    };
-
-    attemptPlay();
-
-    // BRUTE FORCE: Mobile OS (iOS/Android) frequently pauses background videos on scroll
-    // or when the URL bar hides. This interval checks every 500ms and forces it back on.
-    const playEnforcer = setInterval(() => {
-      if (video.paused && video.readyState >= 2) {
-        attemptPlay();
-      }
-    }, 500);
-
-    const handleTimeUpdate = () => {
-      // Safely loop just before the very end
-      if (video.duration && video.currentTime >= video.duration - 0.2) {
-        video.currentTime = 0;
-        attemptPlay();
-      }
-    };
-    video.addEventListener("timeupdate", handleTimeUpdate);
-
-    return () => {
-      clearInterval(playEnforcer);
-      video.removeEventListener("timeupdate", handleTimeUpdate);
-    };
+    // A single, safe attempt to force play on mount for strict browsers (Edge)
+    // without running aggressive intervals that interrupt mobile buffering
+    video.play().catch(() => {});
   }, []);
 
   return (
@@ -59,6 +23,12 @@ export default function BackgroundVideo() {
         muted
         playsInline
         preload="auto"
+        onEnded={(e) => {
+          // Safe fallback for Edge failing to loop indefinitely
+          const v = e.currentTarget;
+          v.currentTime = 0;
+          v.play().catch(() => {});
+        }}
         className="w-full h-full object-cover object-[center_20%] opacity-80"
         src="/hero-bg.mp4"
       />
