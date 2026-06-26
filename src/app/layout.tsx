@@ -15,9 +15,8 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Kalvron AI — Revenue Recovery Infrastructure for Marketing Agencies",
-  description:
-    "Kalvron builds AI lead qualification systems deployed through marketing agency partnerships. Every lead engaged in 60 seconds. Qualified automatically. Only serious leads reach the sales team.",
+  title: "Kalvron AI — Revenue Recovery Infrastructure",
+  description: "Kalvron builds AI lead qualification systems that fix the broken middle of your sales pipeline. Agency partnerships welcome.",
   keywords: [
     "AI lead qualification",
     "marketing agency",

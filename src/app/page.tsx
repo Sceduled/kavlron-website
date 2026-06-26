@@ -8,6 +8,9 @@ import OperationalDeltaSection from "./components/OperationalDeltaSection";
 import InfrastructureSection from "./components/InfrastructureSection";
 import TrustSection from "./components/TrustSection";
 import FaqSection from "./components/FaqSection";
+import CtaSection from "./components/CtaSection";
+import Footer from "./components/Footer";
+import FadeIn from "./components/FadeIn";
 
 export default function Home() {
   return (
@@ -149,31 +152,57 @@ export default function Home() {
       </section>
 
       {/* Problem Section (Phase 2) */}
-      <ProblemSection />
+      <FadeIn delay={100}>
+        <ProblemSection />
+      </FadeIn>
 
       {/* How It Works Section (Phase 3) */}
-      <HowItWorksSection />
+      <FadeIn delay={100}>
+        <HowItWorksSection />
+      </FadeIn>
 
       {/* Client View Section (Phase 4) */}
-      <ClientViewSection />
+      <FadeIn delay={100}>
+        <ClientViewSection />
+      </FadeIn>
 
       {/* Partner Section (Phase 4) */}
-      <PartnerSection />
+      <FadeIn delay={100}>
+        <PartnerSection />
+      </FadeIn>
 
       {/* Built For Section (Phase 5) */}
-      <BuiltForSection />
+      <FadeIn delay={100}>
+        <BuiltForSection />
+      </FadeIn>
 
       {/* Operational Delta Section (Phase 5) */}
-      <OperationalDeltaSection />
+      <FadeIn delay={100}>
+        <OperationalDeltaSection />
+      </FadeIn>
 
       {/* Infrastructure Section (Phase 6) */}
-      <InfrastructureSection />
+      <FadeIn delay={100}>
+        <InfrastructureSection />
+      </FadeIn>
 
       {/* Trust Section (Phase 6) */}
-      <TrustSection />
+      <FadeIn delay={100}>
+        <TrustSection />
+      </FadeIn>
 
       {/* FAQ Section (Phase 6) */}
-      <FaqSection />
+      <FadeIn delay={100}>
+        <FaqSection />
+      </FadeIn>
+
+      {/* CTA Section (Phase 7) */}
+      <FadeIn delay={100}>
+        <CtaSection />
+      </FadeIn>
+
+      {/* Footer */}
+      <Footer />
     </div>
   );
 }
