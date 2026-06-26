@@ -59,9 +59,24 @@ export default function Home() {
       </nav>
 
       {/* ─── Hero Section ─── */}
-      <section className="relative flex min-h-screen flex-col justify-center px-6 pt-24 pb-20 lg:px-10">
+      <section className="relative flex min-h-screen flex-col justify-center px-6 pt-24 pb-20 lg:px-10 overflow-hidden">
+        {/* Background Video */}
+        <div className="absolute inset-0 z-0">
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="w-full h-full object-cover opacity-40 mix-blend-screen"
+          >
+            <source src="/hero-bg.mp4" type="video/mp4" />
+          </video>
+          {/* Gradient overlay to ensure text readability and blend with the next section */}
+          <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/80 to-background" />
+        </div>
+
         {/* Background watermark */}
-        <div className="pointer-events-none absolute bottom-0 left-0 right-0 select-none overflow-hidden">
+        <div className="pointer-events-none absolute bottom-0 left-0 right-0 select-none overflow-hidden z-0">
           <div className="watermark-text whitespace-nowrap pl-4">
             Kalvron
           </div>
