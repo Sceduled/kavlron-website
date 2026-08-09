@@ -11,7 +11,7 @@ export default function CtaSection() {
     email: "",
     phone: "",
     company: "",
-    role: "agency"
+    role: "Agency looking to partner"
   });
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
 
@@ -48,7 +48,7 @@ export default function CtaSection() {
       });
       
       setStatus("success");
-      setFormData({ name: "", email: "", phone: "", company: "", role: "agency" });
+      setFormData({ name: "", email: "", phone: "", company: "", role: "Agency looking to partner" });
       
       setTimeout(() => setStatus("idle"), 5000);
     } catch (error) {
@@ -201,9 +201,9 @@ export default function CtaSection() {
                 onChange={handleChange}
                 className="border border-border bg-background/50 px-4 py-3 text-white focus:border-accent-blue focus:outline-none focus:ring-1 focus:ring-accent-blue transition-colors appearance-none"
               >
-                <option value="agency">Agency looking to partner</option>
-                <option value="direct_leads">Business looking to fix lead & applicant handling</option>
-                <option value="direct_ops">Business looking to automate internal ops</option>
+                <option value="Agency looking to partner">Agency looking to partner</option>
+                <option value="Business looking to fix lead & applicant handling">Business looking to fix lead & applicant handling</option>
+                <option value="Business looking to automate internal ops">Business looking to automate internal ops</option>
               </select>
             </div>
 
