@@ -43,7 +43,7 @@ export default function InfrastructureSection() {
                 </h3>
                 <p className="text-sm leading-relaxed text-text-muted">
                   Each interaction feeds back into the system. Response patterns
-                  improve. Qualification tightens. Revenue recovery compounds over
+                  improve. Qualification tightens. Follow-up compounds over
                   time.
                 </p>
               </div>
