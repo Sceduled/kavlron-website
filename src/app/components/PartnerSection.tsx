@@ -32,7 +32,13 @@ export default function PartnerSection() {
   return (
     <section className="bg-background px-6 py-24 lg:px-10 overflow-hidden" id="partner">
       <div className="mx-auto w-full max-w-7xl">
-        <div className="mb-20 text-center">
+        <div className="mb-20 text-center flex flex-col items-center">
+          <div className="mb-6 inline-flex items-center gap-3">
+            <div className="w-1.5 h-1.5 bg-text-dim rounded-full" />
+            <span className="font-mono text-xs font-bold uppercase tracking-[0.2em] text-text-dim">
+              For Agency Partners
+            </span>
+          </div>
           <h2 className="text-[40px] font-bold leading-[1.1] tracking-tighter text-white sm:text-[64px] drop-shadow-xl">
             You bring the clients.<br/>
             <span className="text-accent-amber">We handle everything else.</span>
