@@ -4,28 +4,32 @@ import { useState } from "react";
 
 const faqs = [
   {
-    q: "How does the agency partnership work?",
-    a: "You connect us with your clients. We build and manage the system for each one. You earn a share of the recurring revenue on every client. You do zero technical work.",
+    q: "Do you only do lead qualification?",
+    a: "No. While lead and applicant handling is a major use case, the same underlying engine is used for internal operations — automating payment reminder ladders, document chasing, and status updates.",
   },
   {
-    q: "What does it cost per client?",
-    a: "Setup starts at ₹5,000 per client. Monthly costs depend on lead volume and whether the system uses WhatsApp, voice calls, or both. We'll give you an exact breakdown before anything starts.",
+    q: "How does the agency partnership work?",
+    a: "For agency partners, you connect us with your clients. We build and manage the system, and you earn a share of the recurring revenue. If you're a direct business, we simply build and manage the system for you directly.",
+  },
+  {
+    q: "What does it cost?",
+    a: "Setup starts at ₹5,000. Monthly costs depend on volume (leads, candidates, or invoices) and whether the system uses WhatsApp, voice calls, or both. We'll give you an exact breakdown before anything starts.",
   },
   {
     q: "How is this different from a CRM or chatbot?",
-    a: "A CRM stores leads. A chatbot answers FAQs. This system actively qualifies every lead through a real conversation, scores them, and routes only the serious ones to the sales team. It's not a tool the client manages. We handle everything.",
+    a: "A CRM stores data. A chatbot answers FAQs. This system actively follows up through a real conversation, tracks responses, and routes only the unresolved items or serious leads to your team. It's not a tool you manage. We handle everything.",
   },
   {
-    q: "Does this replace the sales team?",
-    a: "No. It makes them more effective. The system handles the filtering and follow-up. The sales team only talks to people who are ready to buy.",
+    q: "Does this replace my team?",
+    a: "No. It makes them more effective. The system handles the filtering and follow-up. Your team only spends time on items that actually require human judgment or people who are ready to engage.",
   },
   {
     q: "How quickly does it go live?",
-    a: "First client takes 2-3 days. Every client after that takes 2-4 hours.",
+    a: "The first deployment takes 2-3 days. Subsequent setups or agency client rollouts take 2-4 hours.",
   },
   {
     q: "What if the agent says the wrong thing?",
-    a: "Every system runs through testing before going live. The qualification flow is built specifically for that industry and reviewed before launch. We monitor and optimize based on real conversation data.",
+    a: "Every system runs through testing before going live. The flow is built specifically for your industry and reviewed before launch. We monitor and optimize based on real conversation data.",
   },
 ];
 
