@@ -1,28 +1,39 @@
-import { GraduationCap, Home, Building2 } from "lucide-react";
+import { Briefcase, Users, Package, FileText, Truck } from "lucide-react";
 
 const industries = [
   {
-    icon: GraduationCap,
-    title: "Education",
-    description: "Colleges, schools, coaching institutes. Admission leads qualified automatically. Counselors only call students who are ready to enroll."
+    icon: Briefcase,
+    title: "Marketing/Performance Agencies",
+    description: "Agencies running ad campaigns for real estate, education, and other clients. Every lead qualified before it reaches the client's sales team.",
+    label: "IND.01 // MKTG"
   },
   {
-    icon: Home,
-    title: "Real Estate",
-    description: "Builders, developers, sales teams. Buyer leads qualified for budget, timeline, location, and intent. Agents only talk to serious buyers."
+    icon: Users,
+    title: "Recruitment/Staffing Agencies",
+    description: "Candidate screening calls, interview scheduling, and the offer-to-joining follow-up that recruiters lose candidates to — automated end to end.",
+    label: "IND.02 // RECRUIT"
   },
   {
-    icon: Building2,
-    title: "Any Lead-Gen Business",
-    description: "Healthcare, home services, D2C, professional services. If your client runs ads and has a sales team that calls leads, this system works."
+    icon: Package,
+    title: "Distributors & SME Manufacturers",
+    description: "Payment reminder ladders, outstanding dues tracking, WhatsApp order-taking. No more chasing dealers for what they owe.",
+    label: "IND.03 // DIST"
+  },
+  {
+    icon: FileText,
+    title: "CA & Accounting Firms",
+    description: "Client document chasing, KYC follow-up, compliance deadline coordination — so filing day isn't a scramble.",
+    label: "IND.04 // ACCT"
+  },
+  {
+    icon: Truck,
+    title: "Logistics & Fleet Operators",
+    description: "Proof-of-delivery chasing, driver coordination, dispatch status updates, synced automatically instead of lost in a WhatsApp thread.",
+    label: "IND.05 // LOG"
   }
 ];
 
 export default function BuiltForSection() {
-  const Icon0 = industries[0].icon;
-  const Icon1 = industries[1].icon;
-  const Icon2 = industries[2].icon;
-
   return (
     <section className="relative bg-background px-6 py-32 lg:px-10 overflow-hidden">
       
@@ -39,63 +50,64 @@ export default function BuiltForSection() {
       <div className="mx-auto w-full max-w-7xl relative z-10">
         <div className="mb-16 md:mb-24">
           <h2 className="text-[40px] font-bold leading-[1.1] tracking-tighter text-white sm:text-[64px] drop-shadow-xl text-center">
-            Built for businesses <span className="text-foreground">that run on leads.</span>
+            Built for businesses <span className="text-foreground">that run on follow-up.</span>
           </h2>
         </div>
 
-        {/* Cinematic Staggered Grid */}
+        {/* Cinematic Grid */}
         <div className="relative">
           {/* Background architectural connecting lines */}
           <div className="absolute top-[40%] left-0 w-full h-[1px] bg-accent-blue/30 hidden lg:block shadow-[0_0_10px_rgba(107,127,163,0.5)]" />
           <div className="absolute top-[60%] left-0 w-full h-[1px] bg-accent-amber/30 hidden lg:block shadow-[0_0_10px_rgba(212,98,43,0.5)]" />
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-16 relative z-10">
-            
-            {/* Block 1: Education */}
-            <div className="border border-border/40 bg-background/90 backdrop-blur-md p-8 md:p-10 relative group overflow-hidden shadow-2xl transition-transform duration-500 hover:-translate-y-2">
-              <div className="absolute top-0 right-0 p-3 font-mono text-[10px] text-text-muted/50 uppercase tracking-widest">IND.01 // EDU</div>
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 relative z-10">
+            {industries.map((ind, index) => {
+              const Icon = ind.icon;
+              // Stagger effect
+              const mtClass = index % 3 === 0 ? "" : index % 3 === 1 ? "lg:mt-12" : "lg:mt-24";
               
-              <div className="absolute -right-8 -bottom-8 opacity-20 pointer-events-none group-hover:scale-110 transition-transform duration-700 animate-[pulse_4s_ease-in-out_infinite] drop-shadow-[0_0_15px_rgba(255,255,255,0.4)]">
-                <Icon0 className="w-64 h-64" />
-              </div>
+              // Color themes
+              let borderColor = "border-border/40";
+              let shadowColor = "shadow-2xl";
+              let iconColor = "text-foreground";
+              let iconBg = "bg-foreground/10 border-foreground/30";
+              let labelColor = "text-text-muted/50";
+              let bgClass = "bg-background/90";
+              let glowColor = "drop-shadow-[0_0_15px_rgba(255,255,255,0.4)]";
 
-              <div className="h-14 w-14 border border-foreground/30 bg-foreground/10 flex items-center justify-center mb-10">
-                <Icon0 className="h-6 w-6 text-foreground" />
-              </div>
-              <h3 className="text-2xl font-bold text-white mb-4 tracking-tight">{industries[0].title}</h3>
-              <p className="text-text-muted leading-relaxed font-medium">{industries[0].description}</p>
-            </div>
+              if (index % 3 === 1) {
+                borderColor = "border-accent-blue/30";
+                shadowColor = "shadow-[0_0_40px_rgba(107,127,163,0.1)]";
+                iconColor = "text-accent-blue";
+                iconBg = "bg-accent-blue/10 border-accent-blue/30";
+                labelColor = "text-accent-blue/50";
+                bgClass = "bg-surface-card/90";
+                glowColor = "drop-shadow-[0_0_15px_rgba(107,127,163,0.4)]";
+              } else if (index % 3 === 2) {
+                borderColor = "border-accent-amber/30";
+                shadowColor = "shadow-[0_0_40px_rgba(212,98,43,0.1)]";
+                iconColor = "text-accent-amber";
+                iconBg = "bg-accent-amber/10 border-accent-amber/30";
+                labelColor = "text-accent-amber/50";
+                glowColor = "drop-shadow-[0_0_15px_rgba(212,98,43,0.4)]";
+              }
 
-            {/* Block 2: Real Estate (Staggered down) */}
-            <div className="border border-accent-blue/30 bg-surface-card/90 backdrop-blur-md p-8 md:p-10 relative group overflow-hidden shadow-[0_0_40px_rgba(107,127,163,0.1)] lg:mt-24 transition-transform duration-500 hover:-translate-y-2">
-              <div className="absolute top-0 right-0 p-3 font-mono text-[10px] text-accent-blue/50 uppercase tracking-widest">IND.02 // REAL</div>
-              
-              <div className="absolute -left-12 -bottom-12 opacity-20 pointer-events-none group-hover:scale-110 transition-transform duration-700 animate-[pulse_5s_ease-in-out_infinite] drop-shadow-[0_0_15px_rgba(107,127,163,0.4)]">
-                <Icon1 className="w-72 h-72" />
-              </div>
+              return (
+                <div key={index} className={`border ${borderColor} ${bgClass} backdrop-blur-md p-8 md:p-10 relative group overflow-hidden ${shadowColor} ${mtClass} transition-transform duration-500 hover:-translate-y-2`}>
+                  <div className={`absolute top-0 right-0 p-3 font-mono text-[10px] ${labelColor} uppercase tracking-widest`}>{ind.label}</div>
+                  
+                  <div className={`absolute -right-8 -bottom-8 opacity-10 pointer-events-none group-hover:scale-110 transition-transform duration-700 animate-[pulse_4s_ease-in-out_infinite] ${glowColor}`}>
+                    <Icon className="w-64 h-64" />
+                  </div>
 
-              <div className="h-14 w-14 border border-accent-blue/30 bg-accent-blue/10 flex items-center justify-center mb-10">
-                <Icon1 className="h-6 w-6 text-accent-blue" />
-              </div>
-              <h3 className="text-2xl font-bold text-white mb-4 tracking-tight">{industries[1].title}</h3>
-              <p className="text-text-muted leading-relaxed font-medium">{industries[1].description}</p>
-            </div>
-
-            {/* Block 3: Any Business (Staggered further down) */}
-            <div className="border border-accent-amber/30 bg-background/90 backdrop-blur-md p-8 md:p-10 relative group overflow-hidden shadow-[0_0_40px_rgba(212,98,43,0.1)] lg:mt-48 transition-transform duration-500 hover:-translate-y-2">
-              <div className="absolute top-0 right-0 p-3 font-mono text-[10px] text-accent-amber/50 uppercase tracking-widest">IND.03 // GEN</div>
-              
-              <div className="absolute right-0 top-1/2 -translate-y-1/2 opacity-20 pointer-events-none group-hover:scale-110 transition-transform duration-700 animate-[pulse_4.5s_ease-in-out_infinite] drop-shadow-[0_0_15px_rgba(212,98,43,0.4)]">
-                <Icon2 className="w-64 h-64" />
-              </div>
-
-              <div className="h-14 w-14 border border-accent-amber/30 bg-accent-amber/10 flex items-center justify-center mb-10">
-                <Icon2 className="h-6 w-6 text-accent-amber" />
-              </div>
-              <h3 className="text-2xl font-bold text-white mb-4 tracking-tight">{industries[2].title}</h3>
-              <p className="text-text-muted leading-relaxed font-medium">{industries[2].description}</p>
-            </div>
-
+                  <div className={`h-14 w-14 border ${iconBg} flex items-center justify-center mb-10`}>
+                    <Icon className={`h-6 w-6 ${iconColor}`} />
+                  </div>
+                  <h3 className="text-2xl font-bold text-white mb-4 tracking-tight">{ind.title}</h3>
+                  <p className="text-text-muted leading-relaxed font-medium">{ind.description}</p>
+                </div>
+              );
+            })}
           </div>
         </div>
 
