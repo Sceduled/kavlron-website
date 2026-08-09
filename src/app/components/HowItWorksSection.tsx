@@ -6,14 +6,22 @@ export default function HowItWorksSection() {
     >
       <div className="mx-auto w-full max-w-7xl relative z-10">
         <h2 className="mb-24 text-[40px] font-bold leading-[1.1] tracking-tighter text-white sm:text-[64px] drop-shadow-2xl text-shadow-sm text-center">
-          One system. From lead to{" "}
+          One engine. Two things that{" "}
           <br className="hidden sm:block" />
-          <span className="text-accent-amber drop-shadow-[0_0_20px_rgba(212,98,43,0.5)]">qualified conversation</span>.
+          <span className="text-accent-amber drop-shadow-[0_0_20px_rgba(212,98,43,0.5)]">fall through the cracks</span>.
         </h2>
 
-        {/* Cinematic HUD Timeline */}
-        <div className="relative border border-border/40 bg-background/80 p-8 md:p-16 shadow-[0_0_50px_rgba(0,0,0,0.5)]">
+        {/* Lead & Applicant Handling Timeline */}
+        <div className="relative border border-border/40 bg-background/80 p-8 md:p-16 shadow-[0_0_50px_rgba(0,0,0,0.5)] mb-12">
           
+          {/* Section Title */}
+          <div className="mb-12 inline-flex items-center gap-3">
+            <div className="w-1.5 h-1.5 bg-accent-amber rounded-full" />
+            <span className="font-mono text-sm font-bold uppercase tracking-[0.2em] text-white">
+              Lead & Applicant Handling
+            </span>
+          </div>
+
           {/* Corner Crosshairs */}
           <div className="absolute -top-[14px] -left-[6px] text-accent-blue/80 text-xl font-bold pointer-events-none drop-shadow-[0_0_5px_rgba(107,127,163,0.8)]">+</div>
           <div className="absolute -top-[14px] -right-[6px] text-accent-blue/80 text-xl font-bold pointer-events-none drop-shadow-[0_0_5px_rgba(107,127,163,0.8)]">+</div>
@@ -115,6 +123,117 @@ export default function HowItWorksSection() {
                 </h3>
                 <p className="text-sm font-medium leading-relaxed text-text-muted">
                   Scored as Hot, Warm, or Cold. Hot leads get pushed to the sales team instantly.
+                </p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        {/* Internal Operations Timeline */}
+        <div className="relative border border-border/40 bg-background/80 p-8 md:p-16 shadow-[0_0_50px_rgba(0,0,0,0.5)]">
+          
+          {/* Section Title */}
+          <div className="mb-12 inline-flex items-center gap-3">
+            <div className="w-1.5 h-1.5 bg-accent-amber rounded-full" />
+            <span className="font-mono text-sm font-bold uppercase tracking-[0.2em] text-white">
+              Internal Operations
+            </span>
+          </div>
+
+          {/* Corner Crosshairs */}
+          <div className="absolute -top-[14px] -left-[6px] text-accent-blue/80 text-xl font-bold pointer-events-none drop-shadow-[0_0_5px_rgba(107,127,163,0.8)]">+</div>
+          <div className="absolute -top-[14px] -right-[6px] text-accent-blue/80 text-xl font-bold pointer-events-none drop-shadow-[0_0_5px_rgba(107,127,163,0.8)]">+</div>
+          <div className="absolute -bottom-[14px] -left-[6px] text-accent-blue/80 text-xl font-bold pointer-events-none drop-shadow-[0_0_5px_rgba(107,127,163,0.8)]">+</div>
+          <div className="absolute -bottom-[14px] -right-[6px] text-accent-blue/80 text-xl font-bold pointer-events-none drop-shadow-[0_0_5px_rgba(107,127,163,0.8)]">+</div>
+
+          {/* Highly Visible Animated Data Pipeline */}
+          <div className="absolute top-1/2 left-0 w-full h-[2px] bg-border/40 hidden md:block -translate-y-1/2 overflow-hidden">
+             {/* Data packet traveling left to right constantly */}
+             <div className="w-[100px] h-full bg-gradient-to-r from-transparent via-accent-amber to-transparent shadow-[0_0_15px_rgba(212,98,43,1)] animate-[translateX_3s_linear_infinite]" style={{ transform: "translateX(-100%)", animation: "travel 2.5s linear infinite" }} />
+          </div>
+
+          <div className="grid grid-cols-1 gap-16 md:grid-cols-4 md:gap-8 relative z-10">
+            
+            {/* Step 1 */}
+            <div className="relative flex flex-col items-start md:items-center group">
+              <div className="mb-8 h-16 w-16 border border-accent-blue/50 bg-background flex items-center justify-center relative shadow-[0_0_20px_rgba(107,127,163,0.3)]">
+                {/* Visible Spin Animation */}
+                <div className="absolute inset-0 border border-dashed border-accent-blue/60 animate-[spin_5s_linear_infinite]" />
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent-blue)" strokeWidth="2" strokeLinecap="square" className="relative z-10">
+                  <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+                </svg>
+              </div>
+              <div className="md:text-center">
+                <div className="font-mono text-xs font-bold text-accent-blue/80 tracking-widest uppercase mb-3">Phase . 01</div>
+                <h3 className="mb-4 text-xl font-bold tracking-tight text-white">
+                  Trigger fires
+                </h3>
+                <p className="text-sm font-medium leading-relaxed text-text-muted">
+                  Payment due, document needed, status change. The system detects the gap instantly.
+                </p>
+              </div>
+            </div>
+
+            {/* Step 2 */}
+            <div className="relative flex flex-col items-start md:items-center group">
+              <div className="mb-8 h-16 w-16 border border-accent-amber/50 bg-background flex items-center justify-center relative shadow-[0_0_20px_rgba(212,98,43,0.3)]">
+                {/* Visible Pulse Animation */}
+                <div className="absolute inset-0 border-2 border-accent-amber/60 animate-[ping_2s_ease-in-out_infinite]" />
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent-amber)" strokeWidth="2" strokeLinecap="square" className="relative z-10">
+                  <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+                </svg>
+              </div>
+              <div className="md:text-center">
+                <div className="font-mono text-xs font-bold text-accent-amber/80 tracking-widest uppercase mb-3">Phase . 02</div>
+                <h3 className="mb-4 text-xl font-bold tracking-tight text-white">
+                  Reminder sent automatically
+                </h3>
+                <p className="text-sm font-medium leading-relaxed text-text-muted">
+                  WhatsApp or call follow-up is initiated. Zero human effort required.
+                </p>
+              </div>
+            </div>
+
+            {/* Step 3 */}
+            <div className="relative flex flex-col items-start md:items-center group">
+              <div className="mb-8 h-16 w-16 border border-accent-blue/50 bg-background flex items-center justify-center relative shadow-[0_0_20px_rgba(107,127,163,0.3)]">
+                {/* Visible Spin Animation Reverse */}
+                <div className="absolute inset-0 border border-dashed border-accent-blue/60 animate-[spin_3s_linear_infinite_reverse]" />
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent-blue)" strokeWidth="2" strokeLinecap="square" className="relative z-10">
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                  <polyline points="22 4 12 14.01 9 11.01" />
+                </svg>
+              </div>
+              <div className="md:text-center">
+                <div className="font-mono text-xs font-bold text-accent-blue/80 tracking-widest uppercase mb-3">Phase . 03</div>
+                <h3 className="mb-4 text-xl font-bold tracking-tight text-white">
+                  Response tracked
+                </h3>
+                <p className="text-sm font-medium leading-relaxed text-text-muted">
+                  System logs if it&apos;s paid, sent, confirmed — or ignores and escalates if not.
+                </p>
+              </div>
+            </div>
+
+            {/* Step 4 */}
+            <div className="relative flex flex-col items-start md:items-center group">
+              <div className="mb-8 h-16 w-16 border border-foreground/50 bg-background flex items-center justify-center relative shadow-[0_0_20px_rgba(255,255,255,0.2)]">
+                {/* Visible Scaling Target */}
+                <div className="absolute inset-0 border-2 border-foreground/30 rounded-full animate-pulse" />
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="square" className="relative z-10 text-foreground">
+                  <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" />
+                  <line x1="12" y1="9" x2="12" y2="13" />
+                  <line x1="12" y1="17" x2="12.01" y2="17" />
+                </svg>
+              </div>
+              <div className="md:text-center">
+                <div className="font-mono text-xs font-bold text-foreground/80 tracking-widest uppercase mb-3">Phase . 04</div>
+                <h3 className="mb-4 text-xl font-bold tracking-tight text-white">
+                  Escalates to team
+                </h3>
+                <p className="text-sm font-medium leading-relaxed text-text-muted">
+                  Only the unresolved items require human attention. Everything else is handled.
                 </p>
               </div>
             </div>
