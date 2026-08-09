@@ -78,9 +78,8 @@ export default function CtaSection() {
             <span className="text-accent-blue">Let&apos;s find exactly where.</span>
           </h2>
           <p className="mx-auto max-w-lg text-lg font-medium leading-relaxed text-white drop-shadow-md text-shadow-sm">
-            In 20 minutes, we map your current sales process and identify the
-            exact point where leads stop converting. No pitch. Just the
-            diagnosis.
+            In 20 minutes, we map your current workflow and identify the
+            exact point where leads go cold, documents get stuck, or payments are delayed. No pitch. Just the diagnosis.
           </p>
         </div>
 
@@ -148,8 +147,9 @@ export default function CtaSection() {
                 id="role"
                 className="border border-border bg-background/50 px-4 py-3 text-white focus:border-accent-blue focus:outline-none focus:ring-1 focus:ring-accent-blue transition-colors appearance-none"
               >
-                <option value="agency">Marketing agency looking to partner</option>
-                <option value="business">Business looking to fix lead handling</option>
+                <option value="agency">Agency looking to partner</option>
+                <option value="direct_leads">Business looking to fix lead & applicant handling</option>
+                <option value="direct_ops">Business looking to automate internal ops</option>
               </select>
             </div>
 
