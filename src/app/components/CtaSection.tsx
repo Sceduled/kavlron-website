@@ -5,6 +5,15 @@ import { useState, useRef } from "react";
 export default function CtaSection() {
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
   const sectionRef = useRef<HTMLElement>(null);
+  
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    company: "",
+    role: "agency"
+  });
+  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
 
   const handleMouseMove = (e: React.MouseEvent) => {
     if (!sectionRef.current) return;
@@ -16,6 +25,37 @@ export default function CtaSection() {
 
   const handleMouseLeave = () => {
     setMousePos({ x: 0, y: 0 });
+  };
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+    setFormData({ ...formData, [e.target.id]: e.target.value });
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setStatus("loading");
+    
+    const scriptURL = "https://script.google.com/macros/s/AKfycbwnHERcgZDULNqBrxlp5FJWqu3CDvoM9amf-4nEa35W_-f6ez0Ggz64juHT8IkLhgHX/exec";
+
+    try {
+      await fetch(scriptURL, {
+        method: "POST",
+        mode: "no-cors",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(formData)
+      });
+      
+      setStatus("success");
+      setFormData({ name: "", email: "", phone: "", company: "", role: "agency" });
+      
+      setTimeout(() => setStatus("idle"), 5000);
+    } catch (error) {
+      console.error("Error submitting form", error);
+      setStatus("error");
+      setTimeout(() => setStatus("idle"), 3000);
+    }
   };
 
   return (
@@ -85,7 +125,7 @@ export default function CtaSection() {
 
         {/* Form Card */}
         <div className="border border-border/30 bg-background/80 p-8 md:p-10 shadow-[0_0_50px_rgba(0,0,0,0.5)]">
-          <form className="flex flex-col gap-6">
+          <form className="flex flex-col gap-6" onSubmit={handleSubmit}>
             <div className="flex flex-col gap-2">
               <label htmlFor="name" className="text-xs font-bold uppercase tracking-widest text-text-muted">
                 Full Name
@@ -94,6 +134,9 @@ export default function CtaSection() {
                 suppressHydrationWarning
                 type="text"
                 id="name"
+                value={formData.name}
+                onChange={handleChange}
+                required
                 className="border border-border bg-background/50 px-4 py-3 text-white focus:border-accent-blue focus:outline-none focus:ring-1 focus:ring-accent-blue transition-colors"
                 placeholder="John Doe"
               />
@@ -107,6 +150,9 @@ export default function CtaSection() {
                 suppressHydrationWarning
                 type="email"
                 id="email"
+                value={formData.email}
+                onChange={handleChange}
+                required
                 className="border border-border bg-background/50 px-4 py-3 text-white focus:border-accent-blue focus:outline-none focus:ring-1 focus:ring-accent-blue transition-colors"
                 placeholder="john@company.com"
               />
@@ -120,6 +166,9 @@ export default function CtaSection() {
                 suppressHydrationWarning
                 type="tel"
                 id="phone"
+                value={formData.phone}
+                onChange={handleChange}
+                required
                 className="border border-border bg-background/50 px-4 py-3 text-white focus:border-accent-blue focus:outline-none focus:ring-1 focus:ring-accent-blue transition-colors"
                 placeholder="+1 (555) 000-0000"
               />
@@ -133,6 +182,9 @@ export default function CtaSection() {
                 suppressHydrationWarning
                 type="text"
                 id="company"
+                value={formData.company}
+                onChange={handleChange}
+                required
                 className="border border-border bg-background/50 px-4 py-3 text-white focus:border-accent-blue focus:outline-none focus:ring-1 focus:ring-accent-blue transition-colors"
                 placeholder="Acme Corp"
               />
@@ -145,6 +197,8 @@ export default function CtaSection() {
               <select
                 suppressHydrationWarning
                 id="role"
+                value={formData.role}
+                onChange={handleChange}
                 className="border border-border bg-background/50 px-4 py-3 text-white focus:border-accent-blue focus:outline-none focus:ring-1 focus:ring-accent-blue transition-colors appearance-none"
               >
                 <option value="agency">Agency looking to partner</option>
@@ -155,10 +209,20 @@ export default function CtaSection() {
 
             <button
               suppressHydrationWarning
-              type="button"
-              className="mt-4 w-full bg-accent-blue py-4 text-center font-bold tracking-wide text-white transition-colors hover:bg-white hover:text-background"
+              type="submit"
+              disabled={status === "loading" || status === "success"}
+              className={`mt-4 w-full py-4 text-center font-bold tracking-wide transition-colors ${
+                status === "success" 
+                  ? "bg-green-600 text-white" 
+                  : status === "error"
+                  ? "bg-red-600 text-white"
+                  : "bg-accent-blue text-white hover:bg-white hover:text-background"
+              } disabled:opacity-70 disabled:cursor-not-allowed`}
             >
-              Let&apos;s Talk →
+              {status === "loading" && "Submitting..."}
+              {status === "success" && "Message Sent ✓"}
+              {status === "error" && "Error. Try again."}
+              {status === "idle" && "Let's Talk →"}
             </button>
           </form>
         </div>
