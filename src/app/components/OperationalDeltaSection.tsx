@@ -33,6 +33,12 @@ export default function OperationalDeltaSection() {
     <section className="bg-background px-6 py-24 lg:px-10 overflow-hidden">
       <div className="mx-auto w-full max-w-7xl">
         <div className="mb-20">
+          <div className="mb-6 inline-flex items-center gap-3">
+            <div className="w-1.5 h-1.5 bg-text-dim rounded-full" />
+            <span className="font-mono text-xs font-bold uppercase tracking-[0.2em] text-text-dim">
+              For Lead & Applicant Handling
+            </span>
+          </div>
           <h2 className="text-[40px] font-bold leading-[1.1] tracking-tighter text-white sm:text-[64px] drop-shadow-xl">
             Their sales team <span className="text-accent-amber">stops guessing.</span>
           </h2>
