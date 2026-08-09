@@ -92,18 +92,18 @@ export default function Home() {
           <div className="mb-10 inline-flex items-center gap-3">
             <div className="w-1.5 h-1.5 bg-text-dim rounded-full" />
             <span className="font-mono text-xs font-bold uppercase tracking-[0.2em] text-text-dim">
-              Revenue Recovery Infrastructure
+              Follow-Up Infrastructure
             </span>
           </div>
 
           {/* Headline */}
           <div className="max-w-[900px] drop-shadow-2xl">
             <h1 className="text-[56px] leading-[1.05] font-bold tracking-tighter text-white sm:text-[72px] lg:text-[88px] text-shadow-sm">
-              Your clients blame you for bad leads.
+              You&apos;re getting blamed for someone else&apos;s follow-through problem.
               <br />
               <span className="block mt-4 text-[#D4D4D8]">
-                The leads were{" "}
-                <span className="text-accent-amber drop-shadow-md">fine</span>. Their team didn&apos;t follow up.
+                Bad leads. Late payments. Missing documents. They are all{" "}
+                <span className="text-accent-amber drop-shadow-md">follow-up</span> problems.
               </span>
             </h1>
           </div>
@@ -112,10 +112,7 @@ export default function Home() {
           <div className="mt-12 flex max-w-[640px] gap-6 drop-shadow-xl">
             <div className="hidden sm:block w-12 h-[2px] bg-border mt-3 shrink-0" />
             <p className="mt-8 max-w-[600px] text-lg font-medium leading-relaxed text-white drop-shadow-md text-shadow-sm sm:text-xl">
-            Kalvron builds lead handling systems that sit between your
-            client&apos;s ad campaign and their sales team. Every lead gets
-            engaged in 60 seconds. Qualified automatically. Only the serious
-            ones reach the team.
+            Kalvron builds AI systems that sit at the point where things fall through the cracks — a lead that goes cold, a payment that goes unchased, a document that never comes back. Every one gets followed up on automatically. Only what&apos;s actually ready reaches your team.
           </p>
           </div>
 
@@ -132,7 +129,7 @@ export default function Home() {
               href="#partner"
               className="inline-flex items-center justify-center border border-border px-8 py-4 text-sm font-bold tracking-wide text-foreground transition-colors hover:bg-surface"
             >
-              Partner With Us
+              Talk to Us
             </a>
           </div>
 

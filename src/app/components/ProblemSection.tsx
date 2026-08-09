@@ -8,10 +8,10 @@ export default function ProblemSection() {
         {/* Layer 1: Problem headline */}
         <div className="mb-20 drop-shadow-2xl text-center">
           <h2 className="text-[40px] font-bold leading-[1.1] tracking-tighter text-white sm:text-[56px] text-shadow-sm">
-            The problem isn&apos;t your campaign.
+            Here&apos;s what that looks like
             <br />
             <span className="text-[#D4D4D8]">
-              It&apos;s <span className="text-accent-amber drop-shadow-[0_0_15px_rgba(212,98,43,0.8)]">what happens after</span>.
+              when the entry point is a <span className="text-accent-amber drop-shadow-[0_0_15px_rgba(212,98,43,0.8)]">lead</span>:
             </span>
           </h2>
         </div>
