@@ -3,7 +3,7 @@ const clients = [
 ];
 
 const partners = [
-  { name: "Mediagarh", logo: "/logos/partners/mediagarh.webp", url: "https://mediagarh.com/" },
+  { name: "Benchmark", logo: "/logos/partners/branding-creatively.png", url: "https://www.benchmark.company/" },
   { name: "Drootle", logo: "/logos/partners/drootle.png", url: "https://www.drootle.com/" }
 ];
 
