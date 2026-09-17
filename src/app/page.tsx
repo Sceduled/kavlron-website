@@ -99,11 +99,10 @@ export default function Home() {
           {/* Headline */}
           <div className="max-w-[900px] drop-shadow-2xl">
             <h1 className="text-[56px] leading-[1.05] font-bold tracking-tighter text-white sm:text-[72px] lg:text-[88px] text-shadow-sm">
-              You&apos;re getting blamed for someone else&apos;s follow-through problem.
+              Your business doesn&apos;t need more people.
               <br />
-              <span className="block mt-4 text-[#D4D4D8]">
-                Bad leads. Late payments. Missing documents. They are all{" "}
-                <span className="text-accent-amber drop-shadow-md">follow-up</span> problems.
+              <span className="block mt-4 text-[32px] sm:text-[40px] lg:text-[48px] leading-[1.2] text-[#D4D4D8]">
+                It needs functions that run themselves.
               </span>
             </h1>
           </div>
@@ -111,9 +110,14 @@ export default function Home() {
           {/* Subtitle */}
           <div className="mt-12 flex max-w-[640px] gap-6 drop-shadow-xl">
             <div className="hidden sm:block w-12 h-[2px] bg-border mt-3 shrink-0" />
-            <p className="mt-8 max-w-[600px] text-lg font-medium leading-relaxed text-white drop-shadow-md text-shadow-sm sm:text-xl">
-            Kalvron builds AI systems that sit at the point where things fall through the cracks — a lead that goes cold, a payment that goes unchased, a document that never comes back. Every one gets followed up on automatically. Only what&apos;s actually ready reaches your team.
-          </p>
+            <div className="mt-8 flex flex-col gap-4">
+              <p className="text-xl font-medium leading-relaxed text-[#D4D4D8] drop-shadow-md text-shadow-sm">
+                Sales, collections, client health, reporting. Currently held together by whoever remembers to check. We replace that with <span className="text-accent-amber drop-shadow-md">agents that run continuously and hand off to each other</span>, no person required to keep the process moving.
+              </p>
+              <p className="text-lg font-medium leading-relaxed text-white drop-shadow-md text-shadow-sm sm:text-xl">
+                Kalvron builds autonomous AI systems that own a business function end to end, not a single task. They read live state across your tools, decide what needs to happen, act on it, and only surface what actually needs a human judgment call.
+              </p>
+            </div>
           </div>
 
           {/* CTAs */}
@@ -131,6 +135,17 @@ export default function Home() {
             >
               Talk to Us
             </a>
+          </div>
+
+          {/* Terminal Animation Heading */}
+          <div className="mt-32 mb-4 text-center drop-shadow-2xl relative z-10">
+            <h2 className="text-[28px] sm:text-[36px] font-bold leading-[1.1] tracking-tighter text-white text-shadow-sm">
+              Here&apos;s what one hour looks like
+              <br />
+              <span className="text-[#D4D4D8]">
+                when the system is <span className="text-accent-amber drop-shadow-[0_0_15px_rgba(212,98,43,0.8)]">running</span>:
+              </span>
+            </h2>
           </div>
 
           {/* Terminal Animation */}

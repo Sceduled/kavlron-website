@@ -6,9 +6,9 @@ export default function HowItWorksSection() {
     >
       <div className="mx-auto w-full max-w-7xl relative z-10">
         <h2 className="mb-24 text-[40px] font-bold leading-[1.1] tracking-tighter text-white sm:text-[64px] drop-shadow-2xl text-shadow-sm text-center">
-          One engine. Two things that{" "}
+          One system.{" "}
           <br className="hidden sm:block" />
-          <span className="text-accent-amber drop-shadow-[0_0_20px_rgba(212,98,43,0.5)]">fall through the cracks</span>.
+          <span className="text-accent-amber drop-shadow-[0_0_20px_rgba(212,98,43,0.5)]">Every function it can hold</span>.
         </h2>
 
         {/* Lead & Applicant Handling Timeline */}
@@ -119,10 +119,10 @@ export default function HowItWorksSection() {
               <div className="md:text-center">
                 <div className="font-mono text-xs font-bold text-foreground/80 tracking-widest uppercase mb-3">Phase . 04</div>
                 <h3 className="mb-4 text-xl font-bold tracking-tight text-white">
-                  Only serious leads
+                  Routed by priority, not by order received.
                 </h3>
                 <p className="text-sm font-medium leading-relaxed text-text-muted">
-                  Scored as Hot, Warm, or Cold. Hot leads get pushed to the sales team instantly.
+                  Hot leads reach the right person immediately. Everything else stays in the system, worked automatically, until it&apos;s ready or it isn&apos;t.
                 </p>
               </div>
             </div>
@@ -187,10 +187,10 @@ export default function HowItWorksSection() {
               <div className="md:text-center">
                 <div className="font-mono text-xs font-bold text-accent-amber/80 tracking-widest uppercase mb-3">Phase . 02</div>
                 <h3 className="mb-4 text-xl font-bold tracking-tight text-white">
-                  Reminder sent automatically
+                  The system decides the right action
                 </h3>
                 <p className="text-sm font-medium leading-relaxed text-text-muted">
-                  WhatsApp or call follow-up is initiated. Zero human effort required.
+                  Not a fixed template, a judgment based on who the client is, what&apos;s happened before, and what&apos;s actually urgent right now.
                 </p>
               </div>
             </div>
@@ -230,10 +230,10 @@ export default function HowItWorksSection() {
               <div className="md:text-center">
                 <div className="font-mono text-xs font-bold text-foreground/80 tracking-widest uppercase mb-3">Phase . 04</div>
                 <h3 className="mb-4 text-xl font-bold tracking-tight text-white">
-                  Escalates to team
+                  Escalates only when it should.
                 </h3>
                 <p className="text-sm font-medium leading-relaxed text-text-muted">
-                  Only the unresolved items require human attention. Everything else is handled.
+                  Most of it never needs a human. What does gets flagged with full context, not just &quot;this needs attention.&quot;
                 </p>
               </div>
             </div>

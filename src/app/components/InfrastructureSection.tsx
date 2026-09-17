@@ -63,6 +63,19 @@ export default function InfrastructureSection() {
                 </p>
               </div>
             </div>
+
+            {/* Point 4 */}
+            <div className="flex gap-6">
+              <div className="mt-1 h-2 w-2 shrink-0 bg-accent-amber" />
+              <div>
+                <h3 className="mb-2 text-xl font-bold tracking-tight text-foreground">
+                  Operates like an employee, not an integration
+                </h3>
+                <p className="text-sm leading-relaxed text-text-muted">
+                  Most automation only works where an API exists. Ours can log into portals, cross-reference tabs, and take action the same way a person at a keyboard would, so it isn&apos;t limited to what&apos;s already connected.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
 

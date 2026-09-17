@@ -20,8 +20,8 @@ const faqs = [
     a: "A CRM stores data. A chatbot answers FAQs. This system actively follows up through a real conversation, tracks responses, and routes only the unresolved items or serious leads to your team. It's not a tool you manage. We handle everything.",
   },
   {
-    q: "Does this replace my team?",
-    a: "No. It makes them more effective. The system handles the filtering and follow-up. Your team only spends time on items that actually require human judgment or people who are ready to engage.",
+    q: "Does this replace a role on my team?",
+    a: "It replaces the manual, repetitive parts of a role, checking status, chasing updates, compiling reports, so the person who used to do that work can focus on judgment calls and relationships instead. Nobody needs to be hired to do the checking anymore.",
   },
   {
     q: "How quickly does it go live?",

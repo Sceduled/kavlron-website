@@ -5,14 +5,9 @@ export default function ProblemSection() {
       className="relative flex min-h-screen flex-col items-center justify-center px-6 py-24 lg:px-10 overflow-hidden"
     >
       <div className="mx-auto w-full max-w-7xl">
-        {/* Layer 1: Problem headline */}
         <div className="mb-20 drop-shadow-2xl text-center">
           <h2 className="text-[40px] font-bold leading-[1.1] tracking-tighter text-white sm:text-[56px] text-shadow-sm">
-            Here&apos;s what that looks like
-            <br />
-            <span className="text-[#D4D4D8]">
-              when the entry point is a <span className="text-accent-amber drop-shadow-[0_0_15px_rgba(212,98,43,0.8)]">lead</span>:
-            </span>
+            Right now, a <span className="text-accent-amber drop-shadow-[0_0_15px_rgba(212,98,43,0.8)]">person</span> is the process.
           </h2>
         </div>
 
@@ -51,12 +46,10 @@ export default function ProblemSection() {
               </svg>
             </div>
             <h3 className="mb-4 text-2xl font-bold tracking-tight text-white relative z-10">
-              Leads sit. Nobody calls.
+              Nothing runs without someone remembering
             </h3>
             <p className="text-sm font-medium leading-relaxed text-text-muted relative z-10">
-              A lead fills a form at 9pm. Nobody calls until 11am the next day.
-              By then they&apos;ve already spoken to 2 competitors. The average
-              business takes 47 hours to respond. 63% never respond at all.
+              A report doesn&apos;t get compiled until someone sits down to do it. A follow-up doesn&apos;t happen until someone&apos;s free. The business runs at the speed of whoever&apos;s available, not at the speed the work actually demands.
             </p>
           </div>
 
@@ -79,12 +72,10 @@ export default function ProblemSection() {
               </svg>
             </div>
             <h3 className="mb-4 text-2xl font-bold tracking-tight text-white relative z-10">
-              Sales teams call the wrong people.
+              Judgment calls get made without full information
             </h3>
             <p className="text-sm font-medium leading-relaxed text-text-muted relative z-10">
-              Half the leads they call were never going to buy. Wrong numbers.
-              Price checkers. People who are 2 years away from a decision. The
-              team spends all day on calls that go nowhere.
+              A coordinator flags a client as &quot;at risk&quot; based on gut feeling, not because they checked five data sources. A salesperson calls whoever&apos;s top of mind, not whoever&apos;s actually most likely to close.
             </p>
           </div>
 
@@ -100,11 +91,10 @@ export default function ProblemSection() {
               </svg>
             </div>
             <h3 className="mb-4 text-xl font-bold tracking-tight text-white relative z-10">
-              The serious ones slip through.
+              The work scales by hiring, not by getting better
             </h3>
             <p className="text-sm font-medium leading-relaxed text-text-muted relative z-10">
-              No structured follow-up. No scoring. No way to tell who&apos;s
-              ready and who&apos;s browsing. Good leads go cold.
+              More volume means another coordinator, another analyst, another person doing the same manual checking. Cost climbs in a straight line with growth, forever.
             </p>
           </div>
 
@@ -118,28 +108,15 @@ export default function ProblemSection() {
 
             <div className="relative z-10 max-w-4xl mx-auto text-center flex flex-col items-center">
               <h2 className="mb-10 text-[32px] font-bold tracking-tighter text-white sm:text-[48px] drop-shadow-[0_0_20px_rgba(239,68,68,0.3)]">
-                And then your client calls you.
+                This is what it costs when a role depends on a person.
               </h2>
 
-              <div className="mb-12 flex flex-col sm:flex-row gap-6 md:gap-12 justify-center">
-                <div className="border border-red-500/30 bg-red-500/10 px-6 py-4 rounded-sm shadow-[0_0_15px_rgba(239,68,68,0.2)]">
-                  <p className="font-mono text-sm font-bold tracking-widest text-red-400 uppercase">
-                    &quot;The leads were bad.&quot;
-                  </p>
-                </div>
-                <div className="border border-red-500/30 bg-red-500/10 px-6 py-4 rounded-sm shadow-[0_0_15px_rgba(239,68,68,0.2)]">
-                  <p className="font-mono text-sm font-bold tracking-widest text-red-400 uppercase">
-                    &quot;We're not seeing conversions.&quot;
-                  </p>
-                </div>
-              </div>
-
               <div className="border-t border-red-500/30 pt-10 w-full max-w-3xl">
-                <p className="mb-6 text-xl font-bold text-white tracking-tight">
-                  <span className="text-red-500">22% of agency clients churn every year.</span> The number one trigger? Perceived bad lead quality.
+                <p className="text-xl font-medium text-text-muted mb-6">
+                  A client health score six weeks stale. A collections list built from memory instead of the ledger. A sales pipeline nobody&apos;s actually looked at since Monday. None of this shows up as one dramatic failure, it shows up as a slow leak that only becomes visible when the number&apos;s already bad.
                 </p>
-                <p className="text-xl font-medium text-text-muted">
-                  Your campaign delivered. Their team dropped the ball. But you&apos;re the one losing the account.
+                <p className="text-xl font-bold text-white tracking-tight">
+                  <span className="text-red-500">22% of agency clients churn every year.</span> The number one trigger? Perceived bad lead quality.
                 </p>
               </div>
             </div>

@@ -4,31 +4,31 @@ const industries = [
   {
     icon: Briefcase,
     title: "Marketing/Performance Agencies",
-    description: "Agencies running ad campaigns for real estate, education, and other clients. Every lead qualified before it reaches the client's sales team.",
+    description: "Currently needs an account coordinator to qualify leads, chase reports, and check campaign status by hand. We run that role as a system instead.",
     label: "IND.01 // MKTG"
   },
   {
     icon: Users,
     title: "Recruitment/Staffing Agencies",
-    description: "Candidate screening calls, interview scheduling, and the offer-to-joining follow-up that recruiters lose candidates to — automated end to end.",
+    description: "Currently needs a recruiter's time spent on scheduling and status-chasing instead of placements. We take over everything except the actual judgment calls.",
     label: "IND.02 // RECRUIT"
   },
   {
     icon: Package,
     title: "Distributors & SME Manufacturers",
-    description: "Payment reminder ladders, outstanding dues tracking, WhatsApp order-taking. No more chasing dealers for what they owe.",
+    description: "Currently needs someone tracking dealer orders, chasing receivables, and reconciling payments by hand. We run that as a standing system instead of a headcount line.",
     label: "IND.03 // DIST"
   },
   {
     icon: FileText,
     title: "CA & Accounting Firms",
-    description: "Client document chasing, KYC follow-up, compliance deadline coordination — so filing day isn't a scramble.",
+    description: "Currently needs a junior associate chasing documents and tracking deadlines across every client. We take that role over end to end.",
     label: "IND.04 // ACCT"
   },
   {
     icon: Truck,
     title: "Logistics & Fleet Operators",
-    description: "Proof-of-delivery chasing, driver coordination, dispatch status updates, synced automatically instead of lost in a WhatsApp thread.",
+    description: "Currently needs a dispatcher manually coordinating status across drivers and clients. We run that coordination continuously, without a person holding it together.",
     label: "IND.05 // LOG"
   }
 ];
@@ -50,7 +50,7 @@ export default function BuiltForSection() {
       <div className="mx-auto w-full max-w-7xl relative z-10">
         <div className="mb-16 md:mb-24">
           <h2 className="text-[40px] font-bold leading-[1.1] tracking-tighter text-white sm:text-[64px] drop-shadow-xl text-center">
-            Built for businesses <span className="text-foreground">that run on follow-up.</span>
+            Built for businesses <span className="text-foreground">where a role, not a task, needs to run itself.</span>
           </h2>
         </div>
 

@@ -9,7 +9,7 @@ const partnerFeatures = [
   {
     icon: CircleDollarSign,
     title: "Recurring revenue on every client",
-    description: "Every client you bring in, you earn a share of the ongoing revenue. Not a one-time referral fee. Revenue that comes in every month for as long as the client is live."
+    description: "You're not reselling a workflow. You're reselling an operating system your clients' businesses run on, one that gets more valuable to them the longer it runs."
   },
   {
     icon: Shield,

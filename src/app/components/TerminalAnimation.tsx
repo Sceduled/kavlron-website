@@ -3,21 +3,10 @@
 import { useEffect, useState, useRef } from "react";
 
 const TERMINAL_LINES = [
-  { text: "> Lead received from Meta Ad Campaign", delay: 0 },
-  {
-    text: "> Engaging lead via WhatsApp... connected in 4 seconds",
-    delay: 1200,
-  },
-  { text: "> Qualifying: budget, timeline, requirement...", delay: 2400 },
-  {
-    text: "> Lead scored: HOT — ready to buy",
-    delay: 3600,
-    highlight: true,
-  },
-  {
-    text: "> Alert sent to sales team with full brief",
-    delay: 4800,
-  },
+  { text: "> Lead received from Meta Ad Campaign — scored, routed", delay: 0 },
+  { text: "> Invoice 42 days overdue — reminder sent, escalation flagged", delay: 1200 },
+  { text: "> Client health dropped to 38 — flagged at-risk, added to priority list", delay: 2400 },
+  { text: "> Director summary compiled — sent 6:00 AM", delay: 3600, highlight: true },
 ];
 
 export default function TerminalAnimation() {
@@ -25,6 +14,25 @@ export default function TerminalAnimation() {
   const [displayedChars, setDisplayedChars] = useState<number[]>([]);
   const containerRef = useRef<HTMLDivElement>(null);
   const hasStarted = useRef(false);
+
+  function startAnimation() {
+    TERMINAL_LINES.forEach((line, index) => {
+      setTimeout(() => {
+        setVisibleLines((prev) => prev + 1);
+        // Type out characters one by one
+        const chars = line.text.length;
+        for (let i = 0; i <= chars; i++) {
+          setTimeout(() => {
+            setDisplayedChars((prev) => {
+              const newChars = [...prev];
+              newChars[index] = i;
+              return newChars;
+            });
+          }, i * 18);
+        }
+      }, line.delay);
+    });
+  }
 
   useEffect(() => {
     if (hasStarted.current) return;
@@ -46,24 +54,7 @@ export default function TerminalAnimation() {
     return () => observer.disconnect();
   }, []);
 
-  const startAnimation = () => {
-    TERMINAL_LINES.forEach((line, index) => {
-      setTimeout(() => {
-        setVisibleLines((prev) => prev + 1);
-        // Type out characters one by one
-        const chars = line.text.length;
-        for (let i = 0; i <= chars; i++) {
-          setTimeout(() => {
-            setDisplayedChars((prev) => {
-              const newChars = [...prev];
-              newChars[index] = i;
-              return newChars;
-            });
-          }, i * 18);
-        }
-      }, line.delay);
-    });
-  };
+
 
   return (
     <div ref={containerRef} className="w-full max-w-2xl mt-16 lg:mt-24 z-10 relative">

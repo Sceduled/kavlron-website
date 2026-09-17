@@ -1,4 +1,4 @@
-import { Target, Clock, Bot, Activity } from "lucide-react";
+import { Target, Clock, Bot, Activity, GitMerge } from "lucide-react";
 
 const features = [
   {
@@ -20,6 +20,11 @@ const features = [
     icon: Activity,
     title: "Dead lead recovery",
     description: "Leads that went cold months ago get re-engaged when the timing is right. New message. New angle. Some of the best conversions come from leads everyone else gave up on."
+  },
+  {
+    icon: GitMerge,
+    title: "Cross-function handoff",
+    description: "A hot lead doesn't just get flagged to sales, it changes what collections prioritizes and what the daily briefing surfaces first. The system acts on its own output, not just yours."
   }
 ];
 
@@ -28,6 +33,7 @@ export default function OperationalDeltaSection() {
   const Icon1 = features[1].icon;
   const Icon2 = features[2].icon;
   const Icon3 = features[3].icon;
+  const Icon4 = features[4].icon;
 
   return (
     <section className="bg-background px-6 py-24 lg:px-10 overflow-hidden">
@@ -144,6 +150,23 @@ export default function OperationalDeltaSection() {
                 </div>
               </div>
 
+            </div>
+          </div>
+
+          {/* Bottom Full Width - Feature 4 */}
+          <div className="lg:col-span-12 border-t border-border/40 p-8 md:p-12 relative group overflow-hidden bg-surface-card/20">
+            <div className="absolute top-0 right-0 p-4 font-mono text-xs text-text-muted/50">SYS.05 // CROSS</div>
+            <div className="absolute -left-4 -bottom-4 text-[120px] font-bold text-accent-amber/10 leading-none font-mono pointer-events-none transition-transform duration-700 group-hover:-translate-y-2 animate-[pulse_4s_ease-in-out_infinite] drop-shadow-[0_0_20px_rgba(212,98,43,0.2)]">
+              05
+            </div>
+            <div className="relative z-10 flex flex-col md:flex-row items-start md:items-center gap-6 md:gap-10">
+              <div className="h-14 w-14 shrink-0 border border-accent-amber/30 bg-accent-amber/10 flex items-center justify-center">
+                <Icon4 className="h-7 w-7 text-accent-amber" />
+              </div>
+              <div>
+                <h3 className="text-2xl font-bold text-white mb-3 tracking-tight">{features[4].title}</h3>
+                <p className="text-text-muted leading-relaxed font-medium max-w-3xl">{features[4].description}</p>
+              </div>
             </div>
           </div>
         </div>
