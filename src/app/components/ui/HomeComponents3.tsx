@@ -102,7 +102,7 @@ export function CTAForm() {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div className="flex flex-col gap-2">
                   <label className="text-xs font-bold uppercase tracking-widest text-text-dim">Phone</label>
-                  <input type="tel" name="phone" placeholder="+91" required minLength={10} className="bg-background border border-border p-4 text-white focus:border-accent-amber focus:outline-none transition-colors" />
+                  <input type="tel" name="phone" placeholder="e.g. +1 123 456 7890" required minLength={10} className="bg-background border border-border p-4 text-white focus:border-accent-amber focus:outline-none transition-colors" />
                 </div>
                 <div className="flex flex-col gap-2">
                   <label className="text-xs font-bold uppercase tracking-widest text-text-dim">Company Name</label>
