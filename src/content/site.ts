@@ -114,9 +114,9 @@ export const siteContent = {
     heading: "Businesses running on Kalvron",
     items: [
       { type: "image", name: "IIL", src: "/logos/clients/IIL.jpeg", url: "https://www.linkedin.com/company/iilstudyabroad/" },
-      { type: "text", name: "IZee Business School", text: "IZee Business School" },
+      { type: "image", name: "Benchmark Group", src: "/logos/partners/benchmark-logo.png", url: "https://www.benchmark.company/" },
       { type: "image", name: "Drootle", src: "/logos/partners/drootle.png", url: "https://www.drootle.com/" },
-      { type: "image", name: "MediaGarh", src: "/logos/partners/mediagarh.webp", url: "https://mediagarh.com/" }
+      { type: "image", name: "Lucent Digital", src: "/logos/partners/lucent-digital-logo.png" }
     ]
   },
   faq: [
