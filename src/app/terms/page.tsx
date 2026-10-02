@@ -25,7 +25,7 @@ export default function TermsPage() {
         <p>In no event shall {content.entityName} or its suppliers be liable for any damages (including, without limitation, damages for loss of data or profit, or due to business interruption) arising out of the use or inability to use the materials on Kalvron's website.</p>
 
         <h2 className="text-white mt-10 mb-4 text-2xl font-bold">4. Governing Law</h2>
-        <p>Any claim relating to Kalvron's website shall be governed by the laws of {content.jurisdiction} without regard to its conflict of law provisions.</p>
+        <p>Any claim relating to Kalvron's website shall be governed by applicable laws without regard to its conflict of law provisions.</p>
 
         <h2 className="text-white mt-10 mb-4 text-2xl font-bold">5. Contact Us</h2>
         <p>For any questions regarding these terms, contact us at {content.contactEmail}.</p>

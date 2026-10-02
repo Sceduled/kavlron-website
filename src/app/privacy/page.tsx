@@ -48,8 +48,7 @@ export default function PrivacyPage() {
         <h2 className="text-white mt-10 mb-4 text-2xl font-bold">5. Contact Us</h2>
         <p>For any privacy-related requests or grievances, please contact us at:</p>
         <p className="mt-2">
-          Email: {content.contactEmail}<br/>
-          Address: {content.registeredAddress}
+          Email: {content.contactEmail}
         </p>
       </div>
     </div>

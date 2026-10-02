@@ -63,6 +63,7 @@ export function CTAForm() {
       setStatus("success");
       // Trigger analytics
       window.dispatchEvent(new Event("form-submitted"));
+      window.location.href = "https://cal.com/kalvron-172522/demo?overlayCalendar=true";
     } catch {
       setStatus("error");
       setTimeout(() => setStatus("idle"), 3000);

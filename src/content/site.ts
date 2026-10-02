@@ -166,9 +166,9 @@ export const siteContent = {
     button: "Book a partner call"
   },
   legal: {
-    entityName: "{{TODO: legal entity name}}",
-    contactEmail: "{{TODO: contact email}}",
-    registeredAddress: "{{TODO: registered address}}",
-    jurisdiction: "{{TODO: jurisdiction}}"
+    entityName: "Kalvron AI",
+    contactEmail: "sri@kalvronai.com",
+    registeredAddress: "",
+    jurisdiction: ""
   }
 };
