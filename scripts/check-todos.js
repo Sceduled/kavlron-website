@@ -12,7 +12,7 @@ function walkDir(dir, callback) {
 let found = false;
 console.log("Checking for TODO tokens...");
 
-walkDir(path.join(__dirname, 'src'), function(filePath) {
+walkDir(path.join(__dirname, '..', 'src'), function(filePath) {
   if (filePath.endsWith('.ts') || filePath.endsWith('.tsx') || filePath.endsWith('.md')) {
     const content = fs.readFileSync(filePath, 'utf8');
     if (content.includes('{{TODO:')) {
