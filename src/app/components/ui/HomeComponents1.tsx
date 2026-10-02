@@ -7,7 +7,7 @@ import { ChevronDown, Plus, Minus } from "lucide-react";
 export function Hero() {
   const content = siteContent.hero;
   return (
-    <section className="relative min-h-[90vh] flex flex-col justify-center px-6 pt-32 pb-24 lg:px-10 overflow-hidden">
+    <section className="relative min-h-[90vh] flex flex-col justify-start px-6 pt-40 pb-32 lg:px-10">
       <div className="absolute inset-0 z-0">
         <BackgroundVideo />
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-transparent" />
