@@ -72,14 +72,14 @@ export function Logos() {
       <div className="mx-auto max-w-7xl">
         <span className="font-mono text-xs font-bold uppercase tracking-widest text-text-dim mb-12 block">{content.heading}</span>
         <div className="flex flex-wrap justify-center items-center gap-4 md:gap-6">
-          {content.items?.map((item: any, i: number) => {
+          {content.items?.map((item: { type: string, name: string, src?: string, text?: string, url?: string }, i: number) => {
             const inner = (
               <>
                 {item.type === "image" ? (
                   <img src={item.src} alt={`${item.name} Logo`} className="max-h-12 max-w-[140px] object-contain" />
                 ) : (
                   <span className="font-mono text-xl font-bold text-text-dim text-center leading-tight">
-                    {item.text?.split(' ').map((word, idx) => (
+                    {item.text?.split(' ').map((word: string, idx: number) => (
                       <span key={idx}>{word}<br/></span>
                     ))}
                   </span>
