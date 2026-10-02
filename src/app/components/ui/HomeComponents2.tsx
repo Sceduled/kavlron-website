@@ -72,7 +72,7 @@ export function Logos() {
       <div className="mx-auto max-w-7xl">
         <span className="font-mono text-xs font-bold uppercase tracking-widest text-text-dim mb-12 block">{content.heading}</span>
         <div className="flex flex-wrap justify-center items-center gap-4 md:gap-6">
-          {content.items?.map((item, i) => {
+          {content.items?.map((item: any, i: number) => {
             const inner = (
               <>
                 {item.type === "image" ? (
