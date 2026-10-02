@@ -111,7 +111,13 @@ export const siteContent = {
     ]
   },
   logos: {
-    heading: "Businesses running on Kalvron"
+    heading: "Businesses running on Kalvron",
+    items: [
+      { type: "image", name: "IIL", src: "/logos/clients/IIL.jpeg", url: "https://www.linkedin.com/company/iilstudyabroad/" },
+      { type: "text", name: "IZee Business School", text: "IZee Business School" },
+      { type: "image", name: "Drootle", src: "/logos/partners/drootle.png", url: "https://www.drootle.com/" },
+      { type: "image", name: "MediaGarh", src: "/logos/partners/mediagarh.webp", url: "https://mediagarh.com/" }
+    ]
   },
   faq: [
     { q: "Does this replace my team?", a: "It takes over the coordination, chasing and checking that fills your team's day, so they can focus on work that needs judgment. Most owners use it to grow without adding headcount." },

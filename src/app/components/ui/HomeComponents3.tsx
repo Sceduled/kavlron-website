@@ -114,12 +114,12 @@ export function CTAForm() {
                 <label className="text-xs font-bold uppercase tracking-widest text-text-dim">What do you want to automate?</label>
                 <div className="grid grid-cols-1 gap-3">
                   {content.options.map(opt => (
-                    <label key={opt} className={`flex items-center gap-4 p-4 border cursor-pointer transition-colors ${selectedOptions.includes(opt) ? 'border-accent-amber bg-accent-amber/10' : 'border-border bg-background hover:border-border/80'}`}>
+                    <button type="button" key={opt} onClick={() => toggleOption(opt)} className={`text-left flex items-center gap-4 p-4 border cursor-pointer transition-colors ${selectedOptions.includes(opt) ? 'border-accent-amber bg-accent-amber/10' : 'border-border bg-background hover:border-border/80'}`}>
                       <div className={`w-5 h-5 rounded-sm border flex items-center justify-center shrink-0 ${selectedOptions.includes(opt) ? 'border-accent-amber bg-accent-amber' : 'border-text-dim'}`}>
                         {selectedOptions.includes(opt) && <span className="text-background text-xs font-bold">✓</span>}
                       </div>
                       <span className={`text-sm font-medium ${selectedOptions.includes(opt) ? 'text-white' : 'text-text-muted'}`}>{opt}</span>
-                    </label>
+                    </button>
                   ))}
                 </div>
               </div>

@@ -71,12 +71,34 @@ export function Logos() {
     <section className="py-24 px-6 lg:px-10 bg-background border-t border-border/50 text-center">
       <div className="mx-auto max-w-7xl">
         <span className="font-mono text-xs font-bold uppercase tracking-widest text-text-dim mb-12 block">{content.heading}</span>
-        <div className="flex flex-wrap justify-center items-center gap-12 opacity-50 grayscale hover:grayscale-0 transition-all duration-500">
-          {/* Assuming logos exist in public/logos, mock for now */}
-          <div className="text-xl font-bold text-white">Client A</div>
-          <div className="text-xl font-bold text-white">Client B</div>
-          <div className="text-xl font-bold text-white">Client C</div>
-          <div className="text-xl font-bold text-white">Client D</div>
+        <div className="flex flex-wrap justify-center items-center gap-4 md:gap-6">
+          {content.items?.map((item, i) => {
+            const inner = (
+              <>
+                {item.type === "image" ? (
+                  <img src={item.src} alt={`${item.name} Logo`} className="max-h-12 max-w-[140px] object-contain" />
+                ) : (
+                  <span className="font-mono text-xl font-bold text-text-dim text-center leading-tight">
+                    {item.text?.split(' ').map((word, idx) => (
+                      <span key={idx}>{word}<br/></span>
+                    ))}
+                  </span>
+                )}
+              </>
+            );
+            
+            const className = "flex h-24 min-w-[200px] items-center justify-center border border-border bg-surface px-8 grayscale transition-all duration-300 hover:grayscale-0 hover:bg-surface-card opacity-60 hover:opacity-100";
+            
+            return item.url ? (
+              <a key={i} href={item.url} target="_blank" rel="noopener noreferrer" className={className}>
+                {inner}
+              </a>
+            ) : (
+              <div key={i} className={className}>
+                {inner}
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>
