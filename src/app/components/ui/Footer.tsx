@@ -1,3 +1,4 @@
+"use client";
 import { siteContent } from "../../../content/site";
 
 export function Footer() {
