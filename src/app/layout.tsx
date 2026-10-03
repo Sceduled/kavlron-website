@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
-import { siteContent } from "../content/site";
+import { siteContent, SITE_URL } from "../content/site";
 import { Navbar } from "./components/ui/Navbar";
 import { Footer } from "./components/ui/Footer";
 import { CookieBanner } from "./components/ui/CookieBanner";
@@ -21,11 +21,21 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
   title: siteContent.meta.home.title,
   description: siteContent.meta.home.description,
-  metadataBase: new URL("https://kalvron.com"), // Placeholder
+  metadataBase: new URL(SITE_URL),
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
     title: siteContent.meta.home.title,
     description: siteContent.meta.home.description,
+    url: "/",
     type: "website",
+    images: ["/og-image.jpg"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: siteContent.meta.home.title,
+    description: siteContent.meta.home.description,
     images: ["/og-image.jpg"],
   },
 };
@@ -35,11 +45,28 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    url: SITE_URL,
+    logo: `${SITE_URL}/logo-letter.png`,
+    sameAs: [
+      siteContent.social.linkedIn,
+      siteContent.social.instagram,
+    ].filter(Boolean),
+  };
+
   return (
     <html
       lang="en"
       className={`${inter.variable} ${jetbrainsMono.variable} antialiased`}
     >
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body className="min-h-screen bg-background text-foreground flex flex-col">
         <Navbar />
         <main className="flex-grow">

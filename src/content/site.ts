@@ -1,3 +1,5 @@
+export const SITE_URL = process.env.SITE_URL || "https://kalvron.in";
+
 export const siteContent = {
   meta: {
     home: {

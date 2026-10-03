@@ -3,6 +3,8 @@ import { siteContent } from "../../content/site";
 export const metadata = {
   title: "Terms and Conditions | Kalvron",
   description: "Terms and Conditions for Kalvron AI OS.",
+  alternates: { canonical: "/terms" },
+  openGraph: { url: "/terms" },
 };
 
 export default function TermsPage() {

@@ -12,3 +12,9 @@
   to = "https://:splat"
   status = 301
   force = true
+
+[[redirects]]
+  from = "https://www.kalvron.in/*"
+  to = "https://kalvron.in/:splat"
+  status = 301
+  force = true

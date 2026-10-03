@@ -3,6 +3,8 @@ import { siteContent } from "../../content/site";
 export const metadata = {
   title: siteContent.meta.partners.title,
   description: siteContent.meta.partners.description,
+  alternates: { canonical: "/partners" },
+  openGraph: { url: "/partners" },
 };
 
 export default function PartnersPage() {

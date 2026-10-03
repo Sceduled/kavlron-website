@@ -6,6 +6,8 @@ import { siteContent } from "../content/site";
 export const metadata = {
   title: siteContent.meta.home.title,
   description: siteContent.meta.home.description,
+  alternates: { canonical: "/" },
+  openGraph: { url: "/" },
 };
 
 export default function Home() {

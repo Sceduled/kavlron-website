@@ -3,6 +3,8 @@ import { siteContent } from "../../content/site";
 export const metadata = {
   title: "Privacy Policy | Kalvron",
   description: "Privacy Policy for Kalvron AI OS.",
+  alternates: { canonical: "/privacy" },
+  openGraph: { url: "/privacy" },
 };
 
 export default function PrivacyPage() {
