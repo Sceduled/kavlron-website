@@ -27,7 +27,9 @@ export const siteContent = {
     { label: "Book a call", href: "/#book-a-call" },
     { label: "Privacy", href: "/privacy" },
     { label: "Terms", href: "/terms" },
-    { label: "Cookie settings", href: "#" }, // hook up later
+    { label: "Cookie settings", href: "#" },
+    { label: "Private AI", href: "/private-ai" },
+    { label: "Kalvron vs RPA", href: "/vs-rpa" },
   ],
   social: {
     linkedIn: "https://www.linkedin.com/company/kalvron/",
@@ -58,6 +60,14 @@ export const siteContent = {
       {
         title: "It runs as one system.",
         body: "Separate tools wait for a person to connect them. Here, the departments act on each other. A hot lead changes what collections chases first. A margin slip changes what gets flagged today."
+      },
+      {
+        title: "Private, client-hosted AI models.",
+        body: "Your data stays yours. We don't process sensitive company data through frontier model APIs like ChatGPT or Claude. We host and fine-tune private LLMs dedicated entirely to your company."
+      },
+      {
+        title: "Done-for-you delivery, not a SaaS subscription.",
+        body: "We don't hand you an empty platform and expect you to figure it out. We build, deploy, and run a custom AI OS specifically for your workflows."
       },
       {
         title: "It brings you decisions, not updates.",
@@ -107,7 +117,7 @@ export const siteContent = {
       { title: "You set what it can do alone.", body: "Anything outside that range waits for your approval." },
       { title: "Every action is logged.", body: "You can see what the system did, when, and why." },
       { title: "Scoped access.", body: "The system gets only the access each task needs." },
-      { title: "Your data stays yours.", body: "Each client's data is isolated from every other client's." },
+      { title: "Your data stays yours (Zero API leaks).", body: "We host private, fine-tuned models for your business. Your sensitive operational data is never sent to public frontier APIs like OpenAI or Anthropic." },
       { title: "It upgrades only with your approval.", body: "The system can propose improvements to itself, but nothing changes until you approve it." },
       { title: "Humans on the exceptions.", body: "Disputes, unusual cases and judgment calls always come to a person." }
     ]

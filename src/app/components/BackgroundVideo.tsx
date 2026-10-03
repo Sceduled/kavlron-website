@@ -23,6 +23,7 @@ export default function BackgroundVideo() {
         muted
         playsInline
         preload="auto"
+        poster="/hero-bg-poster.jpg"
         onEnded={(e) => {
           // Safe fallback for Edge failing to loop indefinitely
           const v = e.currentTarget;

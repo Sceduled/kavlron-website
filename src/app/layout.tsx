@@ -49,13 +49,35 @@ export default function RootLayout({
 }>) {
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "Organization",
-    url: SITE_URL,
-    logo: `${SITE_URL}/logo-letter.png`,
-    sameAs: [
-      siteContent.social.linkedIn,
-      siteContent.social.instagram,
-    ].filter(Boolean),
+    "@graph": [
+      {
+        "@type": ["Organization", "ProfessionalService"],
+        "@id": `${SITE_URL}/#organization`,
+        "name": siteContent.legal.entityName,
+        "url": SITE_URL,
+        "logo": `${SITE_URL}/logo-letter.png`,
+        "description": siteContent.meta.home.description,
+        "sameAs": [
+          siteContent.social.linkedIn,
+          siteContent.social.instagram,
+        ].filter(Boolean)
+      },
+      {
+        "@type": "SoftwareApplication",
+        "@id": `${SITE_URL}/#software`,
+        "name": "Kalvron AI OS",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Web",
+        "offers": {
+          "@type": "Offer",
+          "description": "Done-for-you custom AI system implementation with private, self-hosted LLMs.",
+          "availability": "https://schema.org/InStock"
+        },
+        "publisher": {
+          "@id": `${SITE_URL}/#organization`
+        }
+      }
+    ]
   };
 
   return (
