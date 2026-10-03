@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, JetBrains_Mono } from "next/font/google";
+import { Suspense } from "react";
 import "./globals.css";
 import { siteContent, SITE_URL } from "../content/site";
 import { Navbar } from "./components/ui/Navbar";
@@ -75,7 +76,9 @@ export default function RootLayout({
         </main>
         <Footer />
         <CookieBanner />
-        <Analytics />
+        <Suspense fallback={null}>
+          <Analytics />
+        </Suspense>
       </body>
     </html>
   );
