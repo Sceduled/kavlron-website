@@ -13,9 +13,13 @@ export function Analytics() {
 
   useEffect(() => {
     // Check initial consent state
-    const consent = localStorage.getItem("kalvron-cookie-consent");
-    if (consent === "accept") {
-      setConsentGiven(true);
+    try {
+      const consent = localStorage.getItem("kalvron-cookie-consent");
+      if (consent === "accept") {
+        setConsentGiven(true);
+      }
+    } catch (e) {
+      // localStorage blocked
     }
 
     // Listen for consent acceptance

@@ -6,12 +6,21 @@ export function CookieBanner() {
   const [show, setShow] = useState(false);
 
   useEffect(() => {
-    const consent = localStorage.getItem("kalvron-cookie-consent");
-    if (!consent) setShow(true);
+    try {
+      const consent = localStorage.getItem("kalvron-cookie-consent");
+      if (!consent) setShow(true);
+    } catch (e) {
+      // localStorage is blocked (e.g. strict privacy mode), assume no consent, don't show banner to avoid annoying user
+      setShow(false);
+    }
   }, []);
 
   const handleConsent = (value: "accept" | "reject") => {
-    localStorage.setItem("kalvron-cookie-consent", value);
+    try {
+      localStorage.setItem("kalvron-cookie-consent", value);
+    } catch (e) {
+      // Ignore if localStorage is blocked
+    }
     setShow(false);
     if (value === "accept") {
       // Trigger analytics
