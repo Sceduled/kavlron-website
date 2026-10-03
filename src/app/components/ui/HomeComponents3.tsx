@@ -36,6 +36,7 @@ export function CTAForm() {
     }
     setSelectedOptions(newOpts);
   };
+  const [mountTime] = useState(() => Date.now());
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -47,7 +48,9 @@ export function CTAForm() {
       email: formData.get("email"),
       phone: formData.get("phone"),
       company: formData.get("company"),
-      automations: selectedOptions.join(", ")
+      automations: selectedOptions.join(", "),
+      honeypot: formData.get("honeypot"),
+      startTime: String(mountTime)
     };
 
     try {

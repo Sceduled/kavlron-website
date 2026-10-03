@@ -7,6 +7,8 @@ export const metadata = {
   openGraph: { url: "/partners" },
 };
 
+import { PartnerForm } from "../components/ui/PartnerForm";
+
 export default function PartnersPage() {
   const content = siteContent.partners;
   return (
@@ -39,32 +41,7 @@ export default function PartnersPage() {
       
       <div className="max-w-xl mx-auto border border-border bg-surface p-8 md:p-12">
         <h2 className="text-3xl font-bold text-white mb-8 text-center">{content.ctaHeadline}</h2>
-        <form className="flex flex-col gap-6">
-          <input type="hidden" name="source" value="partners" />
-          <div className="flex flex-col gap-2">
-            <label className="text-xs font-bold uppercase tracking-widest text-text-dim">Full Name</label>
-            <input name="name" required className="bg-background border border-border p-4 text-white focus:border-accent-amber focus:outline-none" />
-          </div>
-          <div className="flex flex-col gap-2">
-            <label className="text-xs font-bold uppercase tracking-widest text-text-dim">Work Email</label>
-            <input type="email" name="email" required className="bg-background border border-border p-4 text-white focus:border-accent-amber focus:outline-none" />
-          </div>
-          <div className="flex flex-col gap-2">
-            <label className="text-xs font-bold uppercase tracking-widest text-text-dim">Phone</label>
-            <input type="tel" name="phone" placeholder="+91" required minLength={10} className="bg-background border border-border p-4 text-white focus:border-accent-amber focus:outline-none" />
-          </div>
-          <div className="flex flex-col gap-2">
-            <label className="text-xs font-bold uppercase tracking-widest text-text-dim">Agency Name</label>
-            <input name="agency" required className="bg-background border border-border p-4 text-white focus:border-accent-amber focus:outline-none" />
-          </div>
-          <div className="flex flex-col gap-2">
-            <label className="text-xs font-bold uppercase tracking-widest text-text-dim">Number of active clients</label>
-            <input type="number" name="clients" required min="1" className="bg-background border border-border p-4 text-white focus:border-accent-amber focus:outline-none" />
-          </div>
-          <button type="submit" className="mt-4 h-14 bg-accent-amber text-white font-bold tracking-wide hover:bg-white hover:text-background transition-colors">
-            {content.button}
-          </button>
-        </form>
+        <PartnerForm />
       </div>
     </div>
   );
