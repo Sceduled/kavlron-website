@@ -41,9 +41,6 @@ export function CTAForm() {
     e.preventDefault();
     setStatus("loading");
     
-    // Fallback URL if env var is missing
-    const scriptURL = process.env.NEXT_PUBLIC_FORM_ENDPOINT || "https://script.google.com/macros/s/AKfycbwnHERcgZDULNqBrxlp5FJWqu3CDvoM9amf-4nEa35W_-f6ez0Ggz64juHT8IkLhgHX/exec";
-    
     const formData = new FormData(e.currentTarget);
     const data = {
       name: formData.get("name"),
@@ -54,9 +51,8 @@ export function CTAForm() {
     };
 
     try {
-      await fetch(scriptURL, {
+      await fetch("/api/contact", {
         method: "POST",
-        mode: "no-cors",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data)
       });
