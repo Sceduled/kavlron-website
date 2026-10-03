@@ -18,3 +18,12 @@
   to = "https://kalvron.in/:splat"
   status = 301
   force = true
+
+[context.production.environment]
+  NEXT_PUBLIC_GA_ID = "G-RWCBZE5Y28"
+
+[context.branch-deploy.environment]
+  NEXT_PUBLIC_GA_ID = "G-RWCBZE5Y28"
+
+[context.deploy-preview.environment]
+  NEXT_PUBLIC_GA_ID = "G-RWCBZE5Y28"

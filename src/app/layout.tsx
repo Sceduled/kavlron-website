@@ -5,6 +5,7 @@ import { siteContent, SITE_URL } from "../content/site";
 import { Navbar } from "./components/ui/Navbar";
 import { Footer } from "./components/ui/Footer";
 import { CookieBanner } from "./components/ui/CookieBanner";
+import { Analytics } from "./components/Analytics";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -74,6 +75,7 @@ export default function RootLayout({
         </main>
         <Footer />
         <CookieBanner />
+        <Analytics />
       </body>
     </html>
   );
